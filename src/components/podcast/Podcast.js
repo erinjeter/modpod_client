@@ -1,4 +1,4 @@
-import Favorites from "./Favorites";
+// import Favorites from "./Favorites";
 
 const Podcast = ({ title, desc, pid }) => {
   return (
@@ -6,7 +6,7 @@ const Podcast = ({ title, desc, pid }) => {
       <p>{title}</p>
       <p>{desc}</p>
       <p>{pid}</p>
-      <Favorites pid={pid} />
+      {/* <Favorites pid={pid} /> */}
     </div>
   );
 };
