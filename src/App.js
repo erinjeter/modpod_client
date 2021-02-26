@@ -6,7 +6,7 @@ import Podcasts from "./components/podcast/Podcasts";
 import Auth from "./auth/Auth";
 import Example from "./components/podcast/Card";
 import Podcast from "./components/podcast/Podcast";
-import SaveFavorite from "./components/podcast/Favorites";
+// import SaveFavorite from "./components/podcast/Favorites";
 // import Home from "./components/Home";
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
       <SiteBar clearToken={clearToken} />
       {protectedViews()}
       <Example name={Podcast.title_original} />
-      <SaveFavorite />
+      {/* <SaveFavorite /> */}
       {/* <Podcasts /> */}
     </div>
   );
