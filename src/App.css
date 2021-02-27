@@ -13,6 +13,17 @@
   }
 }
 
+.page-container{  /*tara*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap{ /*tara*/
+  flex: 1;
+}
+
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +46,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  color: blue;
 }

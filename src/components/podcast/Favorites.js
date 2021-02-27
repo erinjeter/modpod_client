@@ -69,12 +69,12 @@
 // }
 // export default SaveFavorite;
 
-// export const Favorites = () => {
-//     let favList : any = [{}]
-//     const getArray = JSON.parse(localStorage.getItem('favorites') || '0');
-//     for (let i = 0; i < getArray.length; i++) {
-//         let x = getArray[i]
-//         favList[i] = JSON.parse(localStorage.getItem('favItem' + [x]) || '')
-//     }
-//     const titles = Object.keys(facList[0]);
-//     }
+// // export const Favorites = () => {
+// //     let favList : any = [{}]
+// //     const getArray = JSON.parse(localStorage.getItem('favorites') || '0');
+// //     for (let i = 0; i < getArray.length; i++) {
+// //         let x = getArray[i]
+// //         favList[i] = JSON.parse(localStorage.getItem('favItem' + [x]) || '')
+// //     }
+// //     const titles = Object.keys(facList[0]);
+// //     }
