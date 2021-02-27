@@ -41,8 +41,8 @@ function App() {
     <div className="App">
       <SiteBar clearToken={clearToken} />
       {protectedViews()}
-      <Example name={Podcast.title_original}/>
-      {/* <Podcasts /> */}
+      
+      <Podcasts />
     </div>
   );
 }
