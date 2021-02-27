@@ -41,7 +41,7 @@ function App() {
     <div className="App">
       <SiteBar clearToken={clearToken} />
       {protectedViews()}
-      <Example name={Podcast.title_original} />
+      {/* <Example name={Podcast.title_original} /> */}
       {/* <SaveFavorite /> */}
       {/* <Podcasts /> */}
     </div>
