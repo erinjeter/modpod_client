@@ -55,7 +55,9 @@ function App() {
           <Home />
           <History />
         </Router>
+        <Podcasts />
         <Footer />
+      </div>
       </div>
   );
 }
