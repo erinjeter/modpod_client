@@ -10,9 +10,11 @@ import Podcasts from "./components/podcast/Podcasts";
 import Auth from "./auth/Auth";
 import Home from "./components/Home";
 import Footer from "./components/Footer"; //tara
+
 import { //tara
   BrowserRouter as Router,
 } from 'react-router-dom';
+
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -44,10 +46,12 @@ function App() {
 
   return (
     <div className="page-container">
+
       <div className='content-wrap'>
         {/* <Header /> */}
         {/* <SiteBar clearToken={clearToken} /> */} {/* tara commented out*/}
         {protectedViews()}
+
 
         <Router>
           <Header />
@@ -59,6 +63,7 @@ function App() {
         <Footer />
       </div>
       </div>
+
   );
 }
 

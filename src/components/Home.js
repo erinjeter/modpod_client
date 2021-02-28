@@ -16,7 +16,6 @@
 
 
 
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -34,6 +33,7 @@ const Home = () => {
           <li>Sed viverra ipsum nunc aliquet bibendum <Link to='/resources'>here</Link></li>
           <li>Donec ac odio tempor orci dapibus ultrices in iaculis</li>
           <li><Link to='/resources'>Lorem Ipsum</Link></li>
+
         </ul>
       </div>
     </div>
