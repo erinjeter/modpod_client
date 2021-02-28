@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 const Signup = (props) => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   let handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/user/register", {
+    fetch("http://localhost:3000/user/create", {
       method: "POST",
       body: JSON.stringify({
-        user: { username: username, password: password},
+        user: { email: email, password: password },
       }),
       headers: new Headers({
         "Content-Type": "application/json",
@@ -27,20 +27,20 @@ const Signup = (props) => {
       <h1>Sign Up</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <Label htmlFor="username">Username</Label>
+          <Label htmlFor="email">Email</Label>
           <Input
-            onChange={(e) => setUsername(e.target.value)}
-            name="username"
-            value={username}>
-          </Input>
+            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            value={email}
+          ></Input>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="password">Password</Label>
           <Input
             onChange={(e) => setPassword(e.target.value)}
             name="password"
-            value={password}>
-          </Input>
+            value={password}
+          ></Input>
         </FormGroup>
         <Button type="submit">Sign Up</Button>
       </Form>

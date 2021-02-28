@@ -1,13 +1,19 @@
 // A component import
 import React, { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.css"; //tara
 import "./App.css";
-import SiteBar from "./components/Navbar";
+// import SiteBar from "./components/Navbar"; //tara removed
+import Header from "./components/Header"; //tara
+// import Navbar from './components/Navbar'; //tara
+import History from "./components/History"; //tara
 import Podcasts from "./components/podcast/Podcasts";
 import Auth from "./auth/Auth";
-import Example from "./components/podcast/Card";
-import Podcast from "./components/podcast/Podcast";
-// import SaveFavorite from "./components/podcast/Favorites";
-// import Home from "./components/Home";
+import Home from "./components/Home";
+import Footer from "./components/Footer"; //tara
+import {
+  //tara
+  BrowserRouter as Router,
+} from "react-router-dom";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -38,12 +44,19 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <SiteBar clearToken={clearToken} />
-      {protectedViews()}
-      {/* <Example name={Podcast.title_original} /> */}
-      {/* <SaveFavorite /> */}
-      {/* <Podcasts /> */}
+    <div className="page-container">
+      <div className="content-wrap">
+        {/* <Header /> */}
+        {/* <SiteBar clearToken={clearToken} /> */} {/* tara commented out*/}
+        {protectedViews()}
+        <Router>
+          <Header />
+          {/* <Navbar /> */}
+          <Home />
+          <History />
+        </Router>
+        <Footer />
+      </div>
     </div>
   );
 }
