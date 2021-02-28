@@ -35,7 +35,7 @@ import {IoIosHeart, IoIosHeartEmpty } from 'react-icons/md';
 //     }
 
     const sendFave = async (id) => {
-        fetch("https://localhost:3000/favorite/create", {
+        fetch("https://localhost:3000/favorites/create", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

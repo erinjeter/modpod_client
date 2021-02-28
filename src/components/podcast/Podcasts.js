@@ -44,8 +44,8 @@ const Podcasts = () => {
     podFetch();
   };
 
-  const sendFave = async (id) => {
-    fetch("https://localhost:3000/favorite/create", {
+  const sendFave = (id) => {
+    fetch("https://localhost:3000/favorites/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const Podcasts = () => {
         },
       }),
     })
-      .then(res => { console.log(res) })
+      .then(res =>  console.log(res) )
       .catch(err => console.log(err))
 }
 
