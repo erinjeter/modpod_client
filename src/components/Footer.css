@@ -8,28 +8,32 @@
     color: white;
 } */
 
+
 .main-footer {
-  /* display: flex;
+    /* display: flex;
     flex-direction: row; */
-  color: #777;
-  background-color: #343a40;
-  padding-top: 3em;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  font-size: 12px;
-  line-height: 1.3em;
+    color: #777;
+    background-color: #343a40;
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+    line-height: 1.3em;
 }
 
 .col {
-  border-right: 1px solid #555;
+    border-right: 1px solid #555;
 }
 
 .col:nth-child(4) {
-  border-right: none;
+    border-right: none;
 }
+
+
 
 /* .row {
     font-size: 12px;
     
 } */
+
