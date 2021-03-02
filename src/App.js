@@ -4,15 +4,20 @@ import 'bootstrap/dist/css/bootstrap.css'; //tara
 import "./App.css";
 // import SiteBar from "./components/Navbar"; //tara removed
 import Header from './components/Header'; //tara
+// import Cards from './components/Cards';//tara
+// import Carousel from './components/Carousel';//tara
 // import Navbar from './components/Navbar'; //tara
-import History from "./components/History"; //tara 
+// import History from "./components/History"; //tara 
 import Podcasts from "./components/podcast/Podcasts";
 import Auth from "./auth/Auth";
-import Home from "./components/Home";
+// import Home from "./components/Home";//tara
+// import Navigation from "./components/Navigation";//tara
 import Footer from "./components/Footer"; //tara
+// import Pagination from './components/Pagination';//tara
 import { //tara
   BrowserRouter as Router,
 } from 'react-router-dom';
+// import Sidebar from "./components/Navigation";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -47,19 +52,22 @@ function App() {
       <div className='content-wrap'>
         {/* <Header /> */}
         {/* <SiteBar clearToken={clearToken} /> */} {/* tara commented out*/}
-        {protectedViews()}
-
         <Router>
           <Header />
-          {/* <Navbar /> */}
-          <Home />
-          <History />
+          {/* <Cards /> */}
         </Router>
+        {protectedViews()}
+
+        {/* <Header /> */}
+        {/* <Carousel /> */}
+
         <Footer />
+        {/* <Pagination /> */}
       </div>
     </div>
   );
 }
 
 export default App;
+
 
