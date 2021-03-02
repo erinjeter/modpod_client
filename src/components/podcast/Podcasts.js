@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Podcast from "./Podcast";
 import SearchResult from "./SearchResult";
-import { CardDeck, CardColumns } from 'reactstrap';
+import { CardDeck, CardColumns, Container, Row, Col } from 'reactstrap';
+import './search.css';
 
 const baseURL = "https://listen-api.listennotes.com/api/v2";
 
@@ -61,11 +62,17 @@ const Podcasts = () => {
         <br />
         <button type="submit">Submit</button>
       </form>
-      <CardColumns>
+      
+
+      <CardColumns className="col d-flex align-content-start flex-wrap">
+      
       {podcasts.map(podcast=> (
         <SearchResult podcast={podcast} />
       ))}
+     
       </CardColumns>
+     
+     
     </div>
   );
 };
