@@ -10,7 +10,7 @@ const Footer = () => {
             <div className='container'>
                 <div className='row'>
                     {/*Col 1 */}
-                    <div><h6>Quick Links</h6></div>
+                    {/* <div><h6>Quick Links</h6></div> */}
                     <div className='col'>
                         {/* <h6>Quick Links</h6> */}
                         <ul className='list-unstyled'>

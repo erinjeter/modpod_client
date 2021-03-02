@@ -20,14 +20,19 @@
     width: 100%;
     font-size: 12px;
     line-height: 1.3em;
+    margin-top: 60px;
 }
 
 .col {
     border-right: 1px solid #555;
 }
 
-.col:nth-child(4) {
+.col:nth-child(3) {
     border-right: none;
+}
+
+li {
+    margin: 0 auto 20px;
 }
 
 
