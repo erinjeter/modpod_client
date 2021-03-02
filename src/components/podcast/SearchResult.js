@@ -6,7 +6,7 @@ import './search.css';
 const SearchResult = ({podcast}) => {
     return (
   <>
-   <Card body outline color="info" className="p-5 col-2" key={podcast.id} id='searchCardCss'>
+   <Card  body inverse style={{ backgroundColor: 'darkorange', borderColor: '#333' }} className="p-5 col-2" key={podcast.id} id='searchCardCss'>
     <CardImg variant="top" src={podcast.image} />
     <CardBody>
       <CardTitle id="cardTitle" tag="h5">{podcast.title_original}</CardTitle>

@@ -14,6 +14,7 @@ import { //tara
   BrowserRouter as Router,
 } from 'react-router-dom';
 
+
 function App() {
   const [sessionToken, setSessionToken] = useState("");
 
@@ -52,7 +53,7 @@ function App() {
         <Router>
           <Header />
           {/* <Navbar /> */}
-          <Home />
+          <Home/>
           <History />
         </Router>
         <Podcasts />

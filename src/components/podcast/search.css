@@ -22,4 +22,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+#genreSelect {
+    width: 200px;
+}
   
