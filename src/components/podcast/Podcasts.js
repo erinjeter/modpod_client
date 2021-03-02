@@ -18,12 +18,6 @@ const Podcasts = () => {
   const [published_after, setPublished_After] = useState("");
   const [language, setLanguage] = useState("");
 
-  //const [search, setSearch] = useState("");
-  // const [ startDate, setStartDate ] = useState('');
-  // const [ endDate, setEndDate ] = useState('');
-  // const [ pageNumber, setPageNumber ] = useState(0);
- 
-
   var myHeaders = new Headers();
   myHeaders.append("X-ListenAPI-Key", "d92b6516b8234d67bb4fd1ed4dbdc66c");
   var requestOptions = {
@@ -46,6 +40,7 @@ const Podcasts = () => {
     e.preventDefault();
     podFetch();
   };
+
   return (
     <div className="main">
       <form onSubmit={(e) => handleSubmit(e)}>
@@ -99,7 +94,7 @@ const Podcasts = () => {
      
       </CardColumns>
      
-     
+    
     </div>
   );
 };
