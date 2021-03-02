@@ -1,7 +1,8 @@
-import React from 'react';
-import * as ReactBootStrap from 'react-bootstrap';
+import React from "react";
+import * as ReactBootStrap from "react-bootstrap";
 // import Switch from 'react-bootstrap/esm/Switch';
 // import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'; //tara commented out
+
 
 import Home from './Home';
 import History from './History';
@@ -21,8 +22,8 @@ import {
 } from 'react-router-dom';
 
 
-
 const Header = () => {
+
     return (
         <header>
             <ReactBootStrap.Navbar collapseOnSelect expand="md" bg="dark" variant="dark"> {/*tara - breakpts - expand={'sm' | 'md' | 'lg' | 'xl'}*/}
@@ -83,11 +84,7 @@ const Header = () => {
 
         </header >
 
-
-
     );
 };
-
-
 
 export default Header;

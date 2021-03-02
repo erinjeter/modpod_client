@@ -36,14 +36,18 @@
 // export default SiteBar;
 
 
+
 import React from 'react';
 import * as ReactBootStrap from 'react-bootstrap';
+
 
 <ReactBootStrap.Navbar className="bg-light justify-content-between">
   <ReactBootStrap.Form inline>
     <ReactBootStrap.InputGroup>
       <ReactBootStrap.InputGroup.Prepend>
+
         <ReactBootStrap.InputGroup.Text id="basic-addon1">@</ReactBootStrap.InputGroup.Text>
+
       </ReactBootStrap.InputGroup.Prepend>
       <ReactBootStrap.FormControl
         placeholder="Username"
@@ -53,6 +57,7 @@ import * as ReactBootStrap from 'react-bootstrap';
     </ReactBootStrap.InputGroup>
   </ReactBootStrap.Form>
   <ReactBootStrap.Form inline>
+
     <ReactBootStrap.FormControl type="text" placeholder="Search" className=" mr-sm-2" />
     <ReactBootStrap.Button type="submit">Submit</ReactBootStrap.Button>
   </ReactBootStrap.Form>
@@ -60,3 +65,4 @@ import * as ReactBootStrap from 'react-bootstrap';
 
 
 export default Navbar;
+

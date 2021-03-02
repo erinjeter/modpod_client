@@ -1,0 +1,29 @@
+#searchCardCss {
+    /* width: 60% !important; */
+    
+    margin: 10px !important;
+       border-radius: 10%;
+       height: 450px;
+}
+
+.col {
+    margin-left: 3%;
+}
+
+#cardText {
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 50px;
+}
+
+#cardTitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#genreSelect {
+    width: 200px;
+}
+  
