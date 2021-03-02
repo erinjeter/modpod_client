@@ -17,6 +17,7 @@ import {
   BrowserRouter as Router,
 } from "react-router-dom";
 
+
 function App() {
   const [sessionToken, setSessionToken] = useState("");
 
@@ -54,7 +55,7 @@ function App() {
         <Router>
           <Header />
           {/* <Navbar /> */}
-          <Home />
+          <Home/>
           <History />
           {/* <IdFetch /> */}
         </Router>
