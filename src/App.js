@@ -10,7 +10,7 @@ import Podcasts from "./components/podcast/Podcasts";
 import Auth from "./auth/Auth";
 import Home from "./components/Home";
 import Footer from "./components/Footer"; //tara
-
+// import IdFetch from "./components/podcast/PodcastByID";
 
 import {
   //tara
@@ -38,9 +38,9 @@ function App() {
   };
 
   const protectedViews = () => {
-    return (sessionToken === localStorage.getItem("token") ? 
+    return sessionToken === localStorage.getItem("token") ? (
       <Podcasts token={sessionToken} />
-     : 
+    ) : (
       <Auth updateToken={updateToken} />
     );
   };
@@ -56,6 +56,7 @@ function App() {
           {/* <Navbar /> */}
           <Home />
           <History />
+          {/* <IdFetch /> */}
         </Router>
         <Podcasts />
         <Footer />

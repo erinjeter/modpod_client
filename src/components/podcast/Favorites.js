@@ -1,6 +1,6 @@
-import React,{ useState, useEffect } from 'react';
-import { Button } from 'reactstrap';
-import {IoIosHeart, IoIosHeartEmpty } from 'react-icons/md';
+import React, { useState, useEffect } from "react";
+import { Button } from "reactstrap";
+import { IoIosHeart, IoIosHeartEmpty } from "react-icons/md";
 
 // const SaveFavorite = (pid) => {
 //     const [fave, setFave] = useState([]);
@@ -34,36 +34,35 @@ import {IoIosHeart, IoIosHeartEmpty } from 'react-icons/md';
 //     }
 //     }
 
-    const sendFave = async (id) => {
-        fetch("https://localhost:3000/favorites/create", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: localStorage.getItem("token"),
-          },
-          body: JSON.stringify({
-            favorites: {
-              podcastid: id,
-            },
-          }),
-        })
-          .then(res => { console.log(res) })
-          .catch(err => console.log(err))
-    }
+const sendFave = async (id) => {
+  fetch("https://localhost:3000/favorites/create", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: localStorage.getItem("token"),
+    },
+    body: JSON.stringify({
+      favorites: {
+        podcastid: id,
+      },
+    }),
+  })
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => console.log(err));
+};
 
-return(
-    <div>
-        {/* {fave.includes(i) ? (
+return (
+  <div>
+    {/* {fave.includes(i) ? (
             <IoIosHeart onClick={() => setFave({items, i})}
             style={{ color: 'red' }} />
         ) : (
             <IoIosHeartEmpty onClick={() => setFave({ items, i})}
             style={{ color: 'red' }} />
         )} */}
-    </div>
-)
-}
+  </div>
+);
+
 export default SaveFavorite;
-
-
-
