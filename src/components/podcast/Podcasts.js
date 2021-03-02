@@ -16,11 +16,6 @@ const Podcasts = () => {
   const [published_after, setPublished_After] = useState("");
   const [language, setLanguage] = useState("");
 
-  //const [search, setSearch] = useState("");
-  // const [ startDate, setStartDate ] = useState('');
-  // const [ endDate, setEndDate ] = useState('');
-  // const [ pageNumber, setPageNumber ] = useState(0);
-
   var myHeaders = new Headers();
   myHeaders.append("X-ListenAPI-Key", "d92b6516b8234d67bb4fd1ed4dbdc66c");
   var requestOptions = {
@@ -44,23 +39,6 @@ const Podcasts = () => {
     podFetch();
   };
 
-  const sendFave = async (id) => {
-    fetch("https://localhost:3000/favorite/create", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
-      },
-      body: JSON.stringify({
-        favorites: {
-          podcastid: id,
-        },
-      }),
-    })
-      .then(res => { console.log(res) })
-      .catch(err => console.log(err))
-}
-
   return (
     <div className="main">
       <form onSubmit={(e) => handleSubmit(e)}>
@@ -77,11 +55,6 @@ const Podcasts = () => {
       {podcasts.map((podcast) => (
         <div>
         <SearchResult podcast={podcast} />  
-          <button onClick={(e) => {
-            e.preventDefault();
-            sendFave(podcast.id)}}>
-              Save Favorite
-          </button>  
         </div>
         ))}
       
