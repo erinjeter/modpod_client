@@ -8,11 +8,11 @@ import Header from './components/Header'; //tara
 // import Cards from './components/Cards';//tara
 // import Carousel from './components/Carousel';//tara
 // import Navbar from './components/Navbar'; //tara
-// import History from "./components/History"; //tara 
+import History from "./components/History"; //tara 
 
 import Podcasts from "./components/podcast/Podcasts";
 import Auth from "./auth/Auth";
-// import Home from "./components/Home";//tara
+import Home from "./components/Home";//tara
 // import Navigation from "./components/Navigation";//tara
 import Footer from "./components/Footer"; //tara
 

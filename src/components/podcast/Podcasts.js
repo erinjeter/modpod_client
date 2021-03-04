@@ -44,41 +44,41 @@ const Podcasts = () => {
   return (
     <div className="main">
       <form onSubmit={(e) => handleSubmit(e)}>
-        <span>Enter search term (required): </span>
+        <span>Enter search term: (required) </span>
         <input
           type="text"
           name="search"
           onChange={(e) => setSearch(e.target.value)}
-          required
+        required
         />
         <br />
-     <span>Published After: </span>
+     {/* <span>Published After: </span>
          <input type="date" name="published_after" pattern="[0-9]{8}" onChange={(e) => setPublished_After(e.target.value)} />
-         <br />
+         <br /> */}
         <Label for="exampleSelect">Select Genre</Label>
-        <Input id="genreSelect" type="select" name="select">
+        <Input id="genreSelect" type="select" name="select" onChange={(e) => setGenre_Ids(e.target.value)}>
           <option>Any</option>
-          <option>Personal Finance</option>
-          <option>Locally Focused</option>
-          <option>Society & Culture</option>
-          <option>Science</option>
-          <option>Health & Fitness</option>
-          <option>History</option>
-          <option>Education</option>
-          <option>Kids & Family</option>
-          <option>Comedy</option>
-          <option>TV & Film</option>
-          <option>True Crime</option>
-          <option>Fiction</option>
-          <option>Government</option>
-          <option>News</option>
-          <option>Religion & Spirituality</option>
-          <option>Arts</option>
-          <option>Business</option>
-          <option>Leisure</option>
-          <option>Music</option>
-          <option>Sports</option>
-          <option>Technology</option>
+          <option value="144">Personal Finance</option>
+          <option value="151">Locally Focused</option>
+          <option value="122">Society & Culture</option>
+          <option value="107">Science</option>
+          <option value="88">Health & Fitness</option>
+          <option value="125">History</option>
+          <option value="111">Education</option>
+          <option value="132">Kids & Family</option>
+          <option value="133">Comedy</option>
+          <option value="68">TV & Film</option>
+          <option value="135">True Crime</option>
+          <option value="168">Fiction</option>
+          <option value="117">Government</option>
+          <option value="99">News</option>
+          <option value="69">Religion & Spirituality</option>
+          <option value="100">Arts</option>
+          <option value="93">Business</option>
+          <option value="82">Leisure</option>
+          <option value="134">Music</option>
+          <option value="77">Sports</option>
+          <option value="127">Technology</option>
         </Input>
         <br />
         <button type="submit">Submit</button>
@@ -88,9 +88,9 @@ const Podcasts = () => {
 
       <CardColumns className="col d-flex align-content-start flex-wrap">
       
-      {podcasts.map(podcast=> (
+      {podcasts.length > 0 ? podcasts.map(podcast=> (
         <SearchResult podcast={podcast} />
-      ))}
+      )) : <strong>No Results. Please try a different search.</strong>}
      
       </CardColumns>
      
