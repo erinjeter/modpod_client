@@ -15,6 +15,8 @@ import Auth from "./auth/Auth";
 import Home from "./components/Home";//tara
 // import Navigation from "./components/Navigation";//tara
 import Footer from "./components/Footer"; //tara
+// import RandomPod from "./components/podcast/RandomPod"
+import Genre from "./components/podcast/Genre"
 
 // import IdFetch from "./components/podcast/PodcastByID";
 
@@ -64,6 +66,8 @@ function App() {
           <History />
           {/* <IdFetch /> */}
         </Router>
+        {/* <RandomPod /> */}
+        {/* <Genre /> */}
         <Podcasts />
         <Footer />
         {/* <Pagination /> */}
