@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css"; //tara
 import "./App.css";
 
+
 import Header from "./components/Header"; //tara
 import History from "./components/History"; //tara
 
@@ -43,21 +44,27 @@ function App() {
     setSessionToken("");
   };
 
-  const protectedViews = () => {
-    return sessionToken === localStorage.getItem("token") ? (
-      <Podcasts token={sessionToken} />
-    ) : (
-      <Auth updateToken={updateToken} />
-    );
-  };
+  // const protectedViews = () => {
+  //   return sessionToken === localStorage.getItem("token") ? (
+  //     <Podcasts token={sessionToken} />
+  //   ) : (
+  //       <Auth updateToken={updateToken} />
+  //     );
+  // };
 
   return (
     <div className="page-container">
       <div className="content-wrap">
         {protectedViews()}
         <Router>
+
           <Header />
+
+
+          {/* <Navbar /> */}
           {/* <Home /> */}
+          {/* <History /> */}
+          {/* <IdFetch /> */}
         </Router>
         {/* <RandomPod /> */}
         {/* <Genre /> */}

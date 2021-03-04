@@ -1,29 +1,45 @@
+import React from 'react'
+import { Button, Modal } from 'react-bootstrap'
 
-import React from 'react';
-import Modal from 'react-bootstrap/Modal'
+class Modal extends React.Component {
 
+    constructor() {
+        super();
+        this.state = {
+            showHide: false
+        }
+    }
 
-const Modal = () => {
+    handleModalShowHide() {
+        this.setState({ showHide: !this.state.showHide })
+    }
 
-    return (
+    render() {
+        return (
+            <div>
+                <Button variant="primary" onClick={() => this.handleModalShowHide()}>
+                    Launch demo modal
+                </Button>
 
-        <Modal.Dialog>
-            <Modal.Header closeButton>
-                <Modal.Title>Modal title</Modal.Title>
-            </Modal.Header>
+                <Modal show={this.state.showHide}>
+                    <Modal.Header closeButton onClick={() => this.handleModalShowHide()}>
+                        <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={() => this.handleModalShowHide()}>
+                            Close
+                    </Button>
+                        <Button variant="primary" onClick={() => this.handleModalShowHide()}>
+                            Save Changes
+                    </Button>
+                    </Modal.Footer>
+                </Modal>
 
-            <Modal.Body>
-                <p>Modal body text goes here.</p>
-            </Modal.Body>
+            </div>
+        )
+    }
 
-            <Modal.Footer>
-                <Button variant="secondary">Close</Button>
-                <Button variant="primary">Save changes</Button>
-            </Modal.Footer>
-        </Modal.Dialog>
-
-    )
 }
-
 
 export default Modal;
