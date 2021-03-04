@@ -11,6 +11,12 @@ import Auth from "./auth/Auth";
 import Home from "./components/Home"; //tara
 import Footer from "./components/Footer"; //tara
 import FavoritesFetch from "./components/podcast/FavoritesFetch";
+// import Genre from "./components/podcast/Genre"
+// import RandomPod from "./components/podcast/RandomPod"
+// import Cards from './components/Cards';//tara
+// import Carousel from './components/Carousel';//tara
+// import Navbar from './components/Navbar'; //tara
+// import Navigation from "./components/Navigation";//tara
 
 import {
   //tara
@@ -53,6 +59,8 @@ function App() {
           <Header />
           {/* <Home /> */}
         </Router>
+        {/* <RandomPod /> */}
+        {/* <Genre /> */}
         <Podcasts />
         <FavoritesFetch />
         <Footer />
