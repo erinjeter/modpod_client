@@ -31,7 +31,7 @@ const getFaves = ({podcast}) => {
         .then((res) => res.json())
         .then((json) => {
           console.log(json);
-          setPodcasts(json.results);
+          setFavePodcasts(json.results);
         });
     };
 

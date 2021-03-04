@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css"; //tara
 import "./App.css";
 
-
 import Header from "./components/Header"; //tara
 import History from "./components/History"; //tara
 
@@ -55,11 +54,9 @@ function App() {
   return (
     <div className="page-container">
       <div className="content-wrap">
-        {protectedViews()}
+        {/* {protectedViews()} */}
         <Router>
-
           <Header />
-
 
           {/* <Navbar /> */}
           {/* <Home /> */}
