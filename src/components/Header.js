@@ -6,23 +6,11 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 // import Switch from 'react-bootstrap/esm/Switch';
 // import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'; //tara commented out
 
-
 import Home from './Home';
 import History from './History';
 import Test from './Test';
 import Carousel from './Carousel';
-// import Auth from './auth/Auth.js';
-// import Modal from './Modal';
 
-// import Signup from "./auth/Signup";
-// import Login from "./auth/Login";
-// import Modal from 'react-responsive-modal';
-// import Modal from 'react-bootstrap/Modal';
-// import ModalDialog from 'react-bootstrap/ModalDialog';
-// import ModalHeader from 'react-bootstrap/ModalHeader';
-// import ModalTitle from 'react-bootstrap/ModalTitle';
-// import ModalBody from 'react-bootstrap/ModalBody';
-// import ModalFooter from 'react-bootstrap/ModalFooter';
 
 import {
     Route,
@@ -33,12 +21,6 @@ import {
     Switch
 } from 'react-router-dom';
 import Signup from "./Signup";
-
-
-
-
-
-
 
 const Header = () => {
 
@@ -52,21 +34,9 @@ const Header = () => {
 
 
 
-    // const onCloseModal = () => {
-    //     setSignup({ signup: false });
-    // };
-
-    // const onCloseModalclose = () => {
-    //     setLogin({ login: false });
-    // };
-
-
-
-
-
     return (
         <header>
-            <ReactBootStrap.Navbar collapseOnSelect expand="md" bg="dark" variant="dark"> {/*tara - breakpts - expand={'sm' | 'md' | 'lg' | 'xl'}*/}
+            <ReactBootStrap.Navbar collapseOnSelect expand="md" bg="dark" variant="dark"> 
                 <ReactBootStrap.Navbar.Brand href="/home">MODPOD</ReactBootStrap.Navbar.Brand>
                 <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
@@ -76,29 +46,13 @@ const Header = () => {
                         <ReactBootStrap.Nav.Link href="/history">History</ReactBootStrap.Nav.Link>
                         <ReactBootStrap.Nav.Link href="/test">Test</ReactBootStrap.Nav.Link>
 
-                        {/* <ReactBootStrap.Navbar.Text><a href="/favorites">Favorites</a></ReactBootStrap.Navbar.Text>
-                        <ReactBootStrap.Navbar.Text><a href="/history">History</a></ReactBootStrap.Navbar.Text>
-                        <ReactBootStrap.Navbar.Text><a href="/test">Test</a></ReactBootStrap.Navbar.Text> */}
-
-
-                        {/* <ReactBootStrap.NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-                            <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
-                            <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>
-                            <ReactBootStrap.NavDropdown.Item href="#action/3.3">Something</ReactBootStrap.NavDropdown.Item>
-                            <ReactBootStrap.NavDropdown.Divider />
-                            <ReactBootStrap.NavDropdown.Item href="#action/3.4">Separated link</ReactBootStrap.NavDropdown.Item>
-                        </ReactBootStrap.NavDropdown> */}
-
                     </ReactBootStrap.Nav>
-
 
                     <ReactBootStrap.Form inline>
                         <ReactBootStrap.FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         <ReactBootStrap.Button variant="primary">Search</ReactBootStrap.Button>
                     </ReactBootStrap.Form>
 
-                    {/* <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link> */}
                     <ul className="nav navbar-nav navbar-right">
                         <li>
                             <button className="btn btn-primary-outline" id="signup" onClick={toggle_signup}>SignUp</button>
@@ -108,11 +62,6 @@ const Header = () => {
                         </li>
                     </ul>
 
-
-                    {/* <ReactBootStrap.Nav>
-                        <ReactBootStrap.Nav.Link href="#deets">More deets</ReactBootStrap.Nav.Link>
-                        <ReactBootStrap.Nav.Link eventKey={2} href="#memes">Dank memes</ReactBootStrap.Nav.Link>
-                    </ReactBootStrap.Nav> */}
                 </ReactBootStrap.Navbar.Collapse>
 
             </ReactBootStrap.Navbar >
@@ -172,12 +121,10 @@ const Header = () => {
                 </div>
             </Modal>
 
-
         </header >
 
-
-
     );
+
 };
 
 export default Header;

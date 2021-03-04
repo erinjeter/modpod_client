@@ -1,23 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Podcast from "./Podcast";
 import SearchResult from "./SearchResult";
-import {
-  CardDeck,
-  CardColumns,
-  Container,
-  Row,
-  Col,
-  Label,
-  Input,
-} from "reactstrap";
-import "./search.css";
-// import SendFave from "./Favorites";
+import { CardDeck, CardColumns, Container, Row, Col, Label, Input } from 'reactstrap';
+import './search.css';
 
-const baseURL = "https://listen-api.listennotes.com/api/v2";
-
-const endpt = "search";
-
-const Podcasts = () => {
+const Genres = () => {
   const [podcasts, setPodcasts] = useState([]);
   // const [ results, setResults ] = useState([]);
   const [search, setSearch] = useState("");
@@ -37,7 +24,7 @@ const Podcasts = () => {
   };
   const podFetch = () => {
     fetch(
-      `${baseURL}/${endpt}?q=${search}&type=podcast&sort_by_date=${sort_by_date}&offset=0&len_max=${len_max}&genre_ids=${genre_ids}&published_after=${published_after}&only_in=title%2Cdescription&language=${language}&safe_mode=0`,
+        'https://listen-api.listennotes.com/api/v2/best_podcasts?genre_id=93&page=2&region=us&safe_mode=0',
       requestOptions
     )
       .then((res) => res.json())
@@ -71,19 +58,7 @@ const Podcasts = () => {
   return (
     <div className="main">
       <form onSubmit={(e) => handleSubmit(e)}>
-        <span>Enter search term: (required) </span>
-        <input
-          type="text"
-          name="search"
-          onChange={(e) => setSearch(e.target.value)}
-        required
-        />
-        <br />
-
-     {/* <span>Published After: </span>
-         <input type="date" name="published_after" pattern="[0-9]{8}" onChange={(e) => setPublished_After(e.target.value)} />
-         <br /> */}
-
+       
         <Label for="exampleSelect">Select Genre</Label>
         <Input id="genreSelect" type="select" name="select" onChange={(e) => setGenre_Ids(e.target.value)}>
           <option>Any</option>
@@ -111,20 +86,25 @@ const Podcasts = () => {
         </Input>
         <br />
         <button type="submit">Submit</button>
+     
       </form>
+      
 
       <CardColumns className="col d-flex align-content-start flex-wrap">
       
       {podcasts.length > 0 ? podcasts.map(podcast=> (
-        <SearchResult podcast={podcast} changeOffsetNum={changeOffset}/>
+        <SearchResult podcast={podcast}/>
       )) : <strong>No Results. Please try a different search.</strong>}
-       
+     
+     
       
        </CardColumns>
      
-   
+    
     </div>
   );
 };
 
-export default Podcasts;
+export default Genres;
+
+
