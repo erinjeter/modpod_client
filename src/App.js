@@ -67,7 +67,7 @@ function App() {
           {/* <IdFetch /> */}
         </Router>
         {/* <RandomPod /> */}
-        {/* <Genre /> */}
+        <Genre />
         <Podcasts />
         <Footer />
         {/* <Pagination /> */}
