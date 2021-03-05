@@ -22,11 +22,11 @@ const FavoritesFetch = (props) => {
       headers: {
         "Content-Type": "application/json",
         Authorization: localStorage.getItem("token"),
-      }
+      },
     })
       .then((res) => res.json())
-      .then ((logFave) => {
-        setAllFaves(logFave)
+      .then((logFave) => {
+        setAllFaves(logFave);
       })
       .catch((err) => console.log(err));
   };
@@ -38,12 +38,16 @@ const FavoritesFetch = (props) => {
   console.log(allFaves);
 
   return (
-  <div>
-    <Button onClick={() => {
-      console.log({allFaves})
-    }}>See faves
-    </Button>
-    </div>);
-}   
+    <div>
+      <Button
+        onClick={() => {
+          console.log({ allFaves });
+        }}
+      >
+        See faves
+      </Button>
+    </div>
+  );
+};
 
 export default FavoritesFetch;

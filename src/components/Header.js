@@ -24,7 +24,6 @@ import Signup from "./Signup";
 
 const Header = () => {
 
-
     const [signup, setSignup] = useState(false);
     const [login, setLogin] = useState(false);
 
