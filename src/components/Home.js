@@ -18,7 +18,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Cards from './Cards';
+// import Cards from './Cards';
 
 
 const Home = () => {
@@ -30,7 +30,7 @@ const Home = () => {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec ac odio tempor orci dapibus ultrices in iaculis. Integer malesuada nunc vel risus commodo viverra. .
             </p>
         <hr />
-        <Cards />
+        {/* <Cards /> */}
         <hr />
         <h4>Rhoncus Mattis Urna</h4>
         <ul>
