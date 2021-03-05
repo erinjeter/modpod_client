@@ -67,7 +67,6 @@ function App() {
         {/* <Genre /> */}
         <Podcasts />
         <FavoritesFetch />
-        <FavoritesDisplay />
         <Footer />
       </div>
     </div>

@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 const baseURL = "https://listen-api.listennotes.com/api/v2";
 
 
-const FavoritesDisplay = () => {
+const FavoritesDisplay = (props) => {
 
     const [fPodcasts, setFPodcasts] = useState([]);
 
@@ -33,11 +33,12 @@ const FavoritesDisplay = () => {
     };
 
     const favesFetch = () => {
-      fetch(`${baseURL}/podcasts/3fdd0021fa0246c694606ad7ce54a71d`, requestOptions)
+      fetch(`${baseURL}/podcasts/${props.podcastid} `, requestOptions)
         .then((res) => res.json())
         .then((json) => {
           console.log(json);
           setFPodcasts(json.results);
+          console.log(props.podcastid)
         });
     };
 
@@ -46,13 +47,11 @@ const FavoritesDisplay = () => {
     }, []);
 
     return (
-      <>
       <Card>
         <CardBody>
           <CardTitle>{setFPodcasts.title}</CardTitle>
         </CardBody>
       </Card>
-      </>
     );
   };
 
