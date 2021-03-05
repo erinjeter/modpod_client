@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as ReactBootStrap from "react-bootstrap";
 // import Modal from "react-responsive-modal";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Form, FormGroup, Label, Input } from "reactstrap";
 
 // import Switch from 'react-bootstrap/esm/Switch';
 // import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'; //tara commented out
@@ -10,6 +11,9 @@ import Home from './Home';
 import History from './History';
 import Test from './Test';
 import Carousel from './Carousel';
+import Signup from '../auth/Signup';
+import Login from '../auth/Login';
+
 
 
 import {
@@ -20,7 +24,7 @@ import {
     Navbar,
     Switch
 } from 'react-router-dom';
-import Signup from "./Signup";
+
 
 const Header = () => {
 
@@ -33,10 +37,14 @@ const Header = () => {
     const toggle_login = () => setLogin(!login);
 
 
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+
 
     return (
         <header>
-            <ReactBootStrap.Navbar collapseOnSelect expand="md" bg="dark" variant="dark"> 
+            <ReactBootStrap.Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                 <ReactBootStrap.Navbar.Brand href="/home">MODPOD</ReactBootStrap.Navbar.Brand>
                 <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
@@ -91,10 +99,20 @@ const Header = () => {
                             <input className="form-control" type="text" name="name" id="name" placeholder="First & Last Name" required="" autocomplete="off" aria-required="true" />
                         </div>
                         <div className="form-group">
-                            <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" />
+                            {/* <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" /> */}
+                            <Input
+                                onChange={(e) => setEmail(e.target.value)}
+                                name="email"
+                                value={email}
+                            ></Input>
                         </div>
                         <div className="form-group">
-                            <input type="password" name="pass" className="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true" />
+                            {/* <input type="password" name="pass" className="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true" /> */}
+                            <Input
+                                onChange={(e) => setPassword(e.target.value)}
+                                name="password"
+                                value={password}
+                            ></Input>
                         </div>
                         <input className="btn btn-md btn-primary btn-center" id="sign_up" type="button" value="Sign Up" />
                     </form>
@@ -111,10 +129,20 @@ const Header = () => {
                     <span className="subtitle">Complete the form below!</span>
                     <form className="contact-form form-validate4" novalidate="novalidate">
                         <div className="form-group">
-                            <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" />
+                            {/* <input className="form-control" type="email" name="email" placeholder="E-mail" required="" autocomplete="off" aria-required="true" /> */}
+                            <Input
+                                onChange={(e) => setEmail(e.target.value)}
+                                name="email"
+                                value={email}
+                            ></Input>
                         </div>
                         <div className="form-group">
-                            <input type="password" name="pass" className="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true" />
+                            {/* <input type="password" name="pass" className="form-control" placeholder="Password" required="" autocomplete="off" aria-required="true" /> */}
+                            <Input
+                                onChange={(e) => setPassword(e.target.value)}
+                                name="password"
+                                value={password}
+                            ></Input>
                         </div>
                         <input className="btn btn-md btn-primary btn-center" id="login_btn" type="button" value="Login" />
                     </form>
