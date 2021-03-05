@@ -44,18 +44,18 @@ function App() {
     setSessionToken("");
   };
 
-  const protectedViews = () => {
-    return sessionToken === localStorage.getItem("token") ? (
-      <Podcasts token={sessionToken} />
-    ) : (
-      <Auth updateToken={updateToken} />
-    );
-  };
+  // const protectedViews = () => {
+  //   return sessionToken === localStorage.getItem("token") ? (
+  //     <Podcasts token={sessionToken} />
+  //   ) : (
+  //     <Auth updateToken={updateToken} />
+  //   );
+  // };
 
   return (
     <div className="page-container">
       <div className="content-wrap">
-        {protectedViews()}
+        {/* {protectedViews()} */}
         <Router>
           <Header />
           {/* <Navbar /> */}
