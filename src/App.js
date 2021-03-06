@@ -11,6 +11,8 @@ import Auth from "./auth/Auth";
 import Home from "./components/Home"; //tara
 import Footer from "./components/Footer"; //tara
 import FavoritesFetch from "./components/podcast/FavoritesFetch";
+import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
+// import ReviewFetch from "./components/podcast/ReviewFetch";
 // import Genre from "./components/podcast/Genre"
 // import RandomPod from "./components/podcast/RandomPod"
 // import Cards from './components/Cards';//tara
@@ -22,6 +24,7 @@ import {
   //tara
   BrowserRouter as Router,
 } from "react-router-dom";
+import FavoritesDisplay from "./components/podcast/FavoritesDisplay";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -43,20 +46,21 @@ function App() {
     setSessionToken("");
   };
 
-  // const protectedViews = () => {
-  //   return sessionToken === localStorage.getItem("token") ? (
-  //     <Podcasts token={sessionToken} />
-  //   ) : (
-  //       <Auth updateToken={updateToken} />
-  //     );
-  // };
+  const protectedViews = () => {
+    return sessionToken === localStorage.getItem("token") ? (
+      <ReviewIndex token={sessionToken} />  //changed from Podcasts to ReviewIndex - Lesley
+    ) : (
+        <Auth updateToken={updateToken} />
+      );
+  };
 
   return (
     <div className="page-container">
       <div className="content-wrap">
-        {/* {protectedViews()} */}
+      <Header clearToken={clearToken}/>
+        {protectedViews()}
         <Router>
-          <Header />
+          
 
           {/* <Navbar /> */}
           {/* <Home /> */}
@@ -64,9 +68,10 @@ function App() {
           {/* <IdFetch /> */}
         </Router>
         {/* <RandomPod /> */}
-        <Genre />
+        {/* <Genre /> */}
         <Podcasts />
         <FavoritesFetch />
+        {/* <ReviewFetch /> */}
         <Footer />
       </div>
     </div>
