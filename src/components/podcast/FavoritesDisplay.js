@@ -7,15 +7,21 @@ import {
   CardDeck,
   CardFooter,
   CardBody,
+  Collapse,
   Col,
   Row,
   Container,
 } from "reactstrap";
+import FavoritesFetch from "./FavoritesFetch";
+import { useEffect, useState } from "react";
+// import FavoritesCard from "./FavoritesCard";
 
 const baseURL = "https://listen-api.listennotes.com/api/v2";
 
 
-const getFaves = ({podcast}) => {
+const FavoritesDisplay = (props) => {
+
+    const [fPodcasts, setFPodcasts] = useState();
 
     var myHeaders = new Headers();
     myHeaders.append("X-ListenAPI-Key", "d92b6516b8234d67bb4fd1ed4dbdc66c");
@@ -26,37 +32,26 @@ const getFaves = ({podcast}) => {
       redirect: "follow",
     };
 
-    const favesFetch = () => {
-      fetch(`${baseURL}/podcasts/${myPodcasts}`, requestOptions)
+    const apiFetch = () => {
+      fetch(`${baseURL}/podcasts/${props.podcast}`, requestOptions)
         .then((res) => res.json())
         .then((json) => {
-          console.log(json);
-          setFavePodcasts(json.results);
+          setFPodcasts(json);
+          console.log(json)
         });
     };
 
+    useEffect(() => {
+      apiFetch();
+    }, []);
+
     return (
-      <>
-        <Card
-          body
-          inverse
-          style={{ backgroundColor: "darkorange", borderColor: "#333" }}
-          className="p-5 col-2"
-          key={podcast.id}
-          id="searchCardCss"
-        >
-          <CardImg variant="top" src={podcast.image} />
-          <CardBody>
-            <CardTitle id="cardTitle" tag="h5">
-              {podcast.title_original}
-            </CardTitle>
-            <CardText id="cardText">{podcast.description_original}</CardText>
-            <Button color="info" size="lg" block>
-              More Info
-            </Button>
-            <SendFave podcastid={podcast.id} />
-          </CardBody>
-        </Card>
-      </>
+      <Card>
+        <CardBody>
+          <CardTitle>{fPodcasts?.title}</CardTitle>
+        </CardBody>
+      </Card>
     );
   };
+
+  export default FavoritesDisplay;

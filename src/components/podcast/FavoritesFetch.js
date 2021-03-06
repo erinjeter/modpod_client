@@ -9,6 +9,7 @@ import {
   CardSubtitle,
   CardBody,
 } from "reactstrap";
+import FavoritesDisplay from "./FavoritesDisplay";
 
 const baseURL = "https://listen-api.listennotes.com/api/v2";
 
@@ -22,11 +23,11 @@ const FavoritesFetch = (props) => {
       headers: {
         "Content-Type": "application/json",
         Authorization: localStorage.getItem("token"),
-      }
+      },
     })
       .then((res) => res.json())
-      .then ((logFave) => {
-        setAllFaves(logFave)
+      .then(json => { 
+        setAllFaves(json);
       })
       .catch((err) => console.log(err));
   };
@@ -38,12 +39,12 @@ const FavoritesFetch = (props) => {
   console.log(allFaves);
 
   return (
-  <div>
-    <Button onClick={() => {
-      console.log({allFaves})
-    }}>See faves
-    </Button>
-    </div>);
-}   
+    <div>
+          {allFaves.map((podcast) => (
+            <FavoritesDisplay podcast={podcast.podcastid}/>
+          ))}
+    </div>
+  );
+};
 
 export default FavoritesFetch;
