@@ -21,7 +21,7 @@ const baseURL = "https://listen-api.listennotes.com/api/v2";
 
 const FavoritesDisplay = (props) => {
 
-    const [fPodcasts, setFPodcasts] = useState([]);
+    const [fPodcasts, setFPodcasts] = useState();
 
     var myHeaders = new Headers();
     myHeaders.append("X-ListenAPI-Key", "d92b6516b8234d67bb4fd1ed4dbdc66c");
@@ -32,24 +32,23 @@ const FavoritesDisplay = (props) => {
       redirect: "follow",
     };
 
-    const favesFetch = () => {
-      fetch(`${baseURL}/podcasts/${props.podcastid} `, requestOptions)
+    const apiFetch = () => {
+      fetch(`${baseURL}/podcasts/${props.podcast}`, requestOptions)
         .then((res) => res.json())
         .then((json) => {
-          console.log(json);
-          setFPodcasts(json.results);
-          console.log(props.podcastid)
+          setFPodcasts(json);
+          console.log(json)
         });
     };
 
     useEffect(() => {
-      favesFetch();
+      apiFetch();
     }, []);
 
     return (
       <Card>
         <CardBody>
-          <CardTitle>{setFPodcasts.title}</CardTitle>
+          <CardTitle>{fPodcasts?.title}</CardTitle>
         </CardBody>
       </Card>
     );

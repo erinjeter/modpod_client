@@ -13,48 +13,36 @@ import FavoritesDisplay from "./FavoritesDisplay";
 
 const baseURL = "https://listen-api.listennotes.com/api/v2";
 
-const FavoritesFetch = () => {
+const FavoritesFetch = (props) => {
   //FETCH FROM FAVORITES TABLE
   const [allFaves, setAllFaves] = useState([]);
 
-  let testFaves = async () => {await fetch("http://localhost:3000/favorites/mine", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: localStorage.getItem("token"),
-    },
-  })};
-
-
   const fetchFaves = () => {
-    try {
-      fetch("http://localhost:3000/favorites/mine", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: localStorage.getItem("token"),
-        },
+    fetch("http://localhost:3000/favorites/mine", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then(json => { 
+        setAllFaves(json);
       })
-        .then(res => res.json())
-        .then((logFave) => {
-          setAllFaves(logFave);
-        });
-      // .catch((err) => console.log(err));
-    } catch (err) {
-      console.log(err);
-    }
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     fetchFaves();
   }, []);
 
+  console.log(allFaves);
+
   return (
     <div>
-      {/* {allFaves.map((podcast) => {
-        <FavoritesDisplay podcastid={podcast.podcastid} />;
-      })} */}
-      state.allFaves
+          {allFaves.map((podcast) => (
+            <FavoritesDisplay podcast={podcast.podcastid}/>
+          ))}
     </div>
   );
 };
