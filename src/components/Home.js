@@ -1,7 +1,7 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
-import Cards from "./Cards";
+// import { Link } from "react-router-dom";
+// import Cards from "./Cards";
 
 
 const Home = () => {
