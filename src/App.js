@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.css"; //tara
 import "./App.css";
 
 import Header from "./components/Header"; //tara
-import History from "./components/History"; //tara
 
 import Podcasts from "./components/podcast/Podcasts";
 import Auth from "./auth/Auth";
@@ -12,7 +11,6 @@ import Home from "./components/Home"; //tara
 import Footer from "./components/Footer"; //tara
 import FavoritesFetch from "./components/podcast/FavoritesFetch";
 import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
-
 
 import {
   //tara
@@ -43,12 +41,12 @@ function App() {
   return (
     <div className="page-container">
       <div className="content-wrap">
-
         <Router>
-      
+          <Header />
         </Router>
         <Podcasts />
         <FavoritesFetch />
+        <FavoritesDisplay />
         <Footer />
       </div>
     </div>
