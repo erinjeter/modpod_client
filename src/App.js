@@ -38,7 +38,7 @@ function App() {
     <div className="page-container">
       <div className="content-wrap">
         <Router>
-        <Header />
+          <Header />
         </Router>
         <Podcasts />
         <FavoritesFetch />
