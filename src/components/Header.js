@@ -1,31 +1,27 @@
 import React, { useState, useEffect } from "react";
 import * as ReactBootStrap from "react-bootstrap";
+
 import Podcasts from "../components/podcast/Podcasts";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 import Home from "./Home";
 import Carousel from "./Carousel";
-
-import { Route, Link, Text, Nav, Navbar, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Signup from "./Signup";
 import Login from "./Login";
-import Favorites from "./podcast/Favorites";
 
 const Header = (props) => {
   const [sessionToken, setSessionToken] = useState("");
-
   useEffect(() => {
     if (localStorage.getItem("token")) {
       setSessionToken(localStorage.getItem("token"));
     }
   }, []);
-
   const updateToken = (newToken) => {
     localStorage.setItem("token", newToken);
     setSessionToken(newToken);
     console.log(sessionToken);
   };
-
   const clearToken = () => {
     localStorage.clear();
     setSessionToken("");
@@ -34,11 +30,9 @@ const Header = (props) => {
   const [signup, setSignup] = useState(false);
   const [login, setLogin] = useState(false);
   const [logout, setLogout] = useState(false);
-
   const toggle_signup = () => setSignup(!signup);
   const toggle_login = () => setLogin(!login);
   const toggle_logout = () => setLogout(!logout);
-
   return (
     <header>
       <ReactBootStrap.Navbar
@@ -91,7 +85,6 @@ const Header = (props) => {
           </ul>
         </ReactBootStrap.Navbar.Collapse>
       </ReactBootStrap.Navbar>
-
       <Carousel />
       <div className="header-route">
         <Switch>
@@ -103,9 +96,7 @@ const Header = (props) => {
           </Route>
         </Switch>
       </div>
-
       {/* Sign up modal */}
-
       <Modal isOpen={signup} toggle={toggle_signup}>
         <div className="modal-body">
           <h2>
@@ -128,17 +119,15 @@ const Header = (props) => {
           </div>
         </div>
       </Modal>
-
       {/* <!-- signUp End -->
                   <!-- login --> */}
-
       <Modal isOpen={login} toggle={toggle_login}>
         <div className="modal-body">
           <h2>
             Login and Get <span>Started</span>
           </h2>
           <span className="subtitle">Complete the form below!</span>
-          {/* <form className="contact-form form-validate4" novalidate="novalidate"> */}
+
           <div className="form-group">
             <Login
               updateToken={updateToken}
@@ -152,11 +141,10 @@ const Header = (props) => {
               aria-required="true"
             />
           </div>
-          {/* </form> */}
+
         </div>
       </Modal>
     </header>
   );
 };
-
 export default Header;
