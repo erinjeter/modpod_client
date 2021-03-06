@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import * as ReactBootStrap from "react-bootstrap";
+import Podcasts from "../components/podcast/Podcasts"
 // import Modal from "react-responsive-modal";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-
-// import Switch from 'react-bootstrap/esm/Switch';
-// import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap'; //tara commented out
 
 import Home from "./Home";
 import History from "./History";
@@ -133,8 +131,6 @@ const Header = (props) => {
           <Route exact path="/">
             <Home />
           </Route>
-          {/* <Route exact path='/signup'><Signup /></Route> */}
-          {/* <Route exact path='/auth/login'><Login /></Route> */}
         </Switch>
       </div>
 
@@ -146,30 +142,7 @@ const Header = (props) => {
             Get Started Absolutely<span> Free!</span>
           </h2>
           <span className="subtitle">No credit card needed</span>
-
-          <div className="form-group">
-            {/* <input
-                className="form-control"
-                type="text"
-                name="name"
-                id="name"
-                placeholder="First & Last Name"
-                required=""
-                autocomplete="off"
-                aria-required="true"
-              />
-            </div>
-            <div className="form-group">
-              <input
-                className="form-control"
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                required=""
-                autocomplete="off"
-                aria-required="true"
-              />
-            </div> */}
+   
             <div className="form-group">
               <Signup
                 updateToken={updateToken}
@@ -183,12 +156,6 @@ const Header = (props) => {
                 aria-required="true"
               />
             </div>
-            {/* <input
-                className="btn btn-md btn-primary btn-center"
-                id="sign_up"
-                type="button"
-                value="Sign Up"
-              /> */}
           </div>
 
         </div>
@@ -216,22 +183,6 @@ const Header = (props) => {
                 aria-required="true"
               />
             </div>
-            {/* <div className="form-group">
-              <input
-                type="password"
-                name="pass"
-                className="form-control"
-                placeholder="Password"
-                required=""
-                autocomplete="off"
-                aria-required="true"
-              />
-            </div> */}
-            {/* <input
-              className="btn btn-md btn-primary btn-center"
-              id="login_btn"
-              type="button"
-              value="Login" */}
 
           </form>
         </div>
