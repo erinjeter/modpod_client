@@ -39,7 +39,7 @@ const FavoritesFetch = () => {
           {allFaves.map((podcast) => (
             <FavoritesDisplay podcast={podcast.podcastid}/>
           ))}
-          <ReviewIndex />
+         
           
     </div>
   );

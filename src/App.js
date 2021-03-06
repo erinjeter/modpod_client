@@ -6,6 +6,7 @@ import Header from "./components/Header"; //tara
 import Podcasts from "./components/podcast/Podcasts";
 import Footer from "./components/Footer"; //tara
 import FavoritesFetch from "./components/podcast/FavoritesFetch";
+import FavoritesDisplay from "./components/podcast/FavoritesDisplay";
 import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
 
 import {
