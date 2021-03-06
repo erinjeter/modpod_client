@@ -3,8 +3,6 @@ const Card = () => {
   // return must have one parent element
   const styles = {
     card: {
-      // "min-width": "100px",
-      // "max-width": "250px"
       "min-width": "200px",
       "max-width": "250px",
       margin: "20px",
