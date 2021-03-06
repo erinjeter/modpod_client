@@ -21,7 +21,8 @@ const baseURL = "https://listen-api.listennotes.com/api/v2";
 
 const FavoritesDisplay = (props) => {
 
-    const [fPodcasts, setFPodcasts] = useState();
+    const [fPodcasts, setFPodcasts] = useState([]);
+
 
     var myHeaders = new Headers();
     myHeaders.append("X-ListenAPI-Key", "d92b6516b8234d67bb4fd1ed4dbdc66c");
@@ -31,6 +32,7 @@ const FavoritesDisplay = (props) => {
       headers: myHeaders,
       redirect: "follow",
     };
+
 
     const apiFetch = () => {
       fetch(`${baseURL}/podcasts/${props.podcast}`, requestOptions)

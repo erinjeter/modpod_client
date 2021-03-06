@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as ReactBootStrap from "react-bootstrap";
+import Podcasts from "../components/podcast/Podcasts"
 // import Modal from "react-responsive-modal";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
@@ -47,9 +48,10 @@ const Header = () => {
 
                     </ReactBootStrap.Nav>
 
-                    <ReactBootStrap.Form inline>
-                        <ReactBootStrap.FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                    <ReactBootStrap.Form inline> */}
+                         <ReactBootStrap.FormControl type="text" placeholder="Search" className="mr-sm-2" />
                         <ReactBootStrap.Button variant="primary">Search</ReactBootStrap.Button>
+                        {/* <Podcasts /> */}
                     </ReactBootStrap.Form>
 
                     <ul className="nav navbar-nav navbar-right">

@@ -47,7 +47,7 @@ const SearchResult = ({ podcast }) => {
             onClick={toggle}
             style={{ marginBottom: "1rem" }}
           >
-            Toggle
+           More Info
           </Button>
           <Collapse isOpen={isOpen}>
             <Card id="toggleCard">

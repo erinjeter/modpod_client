@@ -11,6 +11,8 @@ import Auth from "./auth/Auth";
 import Home from "./components/Home"; //tara
 import Footer from "./components/Footer"; //tara
 import FavoritesFetch from "./components/podcast/FavoritesFetch";
+import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
+// import ReviewFetch from "./components/podcast/ReviewFetch";
 // import Genre from "./components/podcast/Genre"
 // import RandomPod from "./components/podcast/RandomPod"
 // import Cards from './components/Cards';//tara
@@ -55,9 +57,10 @@ function App() {
   return (
     <div className="page-container">
       <div className="content-wrap">
+      <Header clearToken={clearToken}/>
         {protectedViews()}
         <Router>
-          <Header />
+      
           {/* <Navbar /> */}
           {/* <Home /> */}
           {/* <History /> */}
@@ -67,6 +70,7 @@ function App() {
         {/* <Genre /> */}
         <Podcasts />
         <FavoritesFetch />
+        {/* <ReviewFetch /> */}
         <Footer />
       </div>
     </div>
