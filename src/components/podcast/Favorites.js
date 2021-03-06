@@ -1,37 +1,38 @@
-import React,{ useState, useEffect } from 'react';
-import { Button } from 'reactstrap';
-import Podcasts from './Podcasts';
+import React, { useState, useEffect } from "react";
+import { Button } from "reactstrap";
+import { IoIosHeart, IoIosHeartEmpty } from "react-icons/md";
 
-const SaveFavorite = () => {
-    const [fave, setFave] = useState('');
+const SendFave = ({podcastid}) => {
+  const [faves, setFaves] = useState([]);
 
-    useEffect(async () => {
-        let savedFave = await localStorage.getItem('_Fav');
-        if (savedFavorite) {
-            setFave(savedFavorite);
-        }
-    }, [])
+  const getFave = () => {
+  fetch("http://localhost:3000/favorites/create", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: localStorage.getItem("token"),
+    },
+    body: JSON.stringify({
+      favorites: {
+        podcastid: podcastid,
+        review: "",
+        rating: ""
+      },
+    }) ,                                                                                                   
+  })
+  .then((res) => res.json())
+  .then((json) => {
+    console.log(json);
+    setFaves(json.results);
+  });
+}
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        fetch('https://localhost:3000/favorite', {
-            method: 'POST',
-            body: podcast,
-            headers: new Header({
-                'Content-Type': 'application/json',
-                'Authorization': props.token
-            })
-        }) .then((res) => res.json())
-        .then((setFave) => {
-            console.log('fave-data:',fave);
-            setFave('true')
-        })
-    }
+return (
+<div>
+  <Button onClick = {() => 
+  getFave()
+  }>Save Favorite</Button>
+</div>);
 
-return(
-    <div>
-        <button onClick={() => SaveFavorite}></button>
-    </div>
-)
-
-export default Favorites;
+};
+export default SendFave;

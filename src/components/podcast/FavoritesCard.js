@@ -4,19 +4,18 @@ import {
   CardImg,
   CardTitle,
   CardText,
+  CardLink,
+  CardDeck,
+  CardFooter,
   CardBody,
+  Col,
+  Row,
+  Container,
   Collapse,
 } from "reactstrap";
-import SendFave from "./Favorites";
-
-//import CardDeck from 'react-bootstrap/CardDeck';
-import { useState } from "react";
 import "./search.css";
 
-const SearchResult = ({ podcast }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
-
+const FavoritesCard = ({ podcast }) => {
   return (
     <>
       <Card
@@ -33,13 +32,14 @@ const SearchResult = ({ podcast }) => {
             {podcast.title_original}
           </CardTitle>
           <CardText id="cardText">{podcast.description_highlighted}</CardText>
-          
+          {/* <Button color="info" size="lg" block>More Info</Button> */}
+
           <Button
             color="primary"
             onClick={toggle}
             style={{ marginBottom: "1rem" }}
           >
-            More Info
+            Toggle
           </Button>
           <Collapse isOpen={isOpen}>
             <Card id="toggleCard">
@@ -51,9 +51,9 @@ const SearchResult = ({ podcast }) => {
             <SendFave podcastid={podcast.id} />
           </Collapse>
         </CardBody>
-      </Card>      
+      </Card>
     </>
   );
 };
 
-export default SearchResult;
+export default FavoritesCard;

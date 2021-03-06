@@ -1,21 +1,21 @@
 // A component import
 import React, { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.css"; //tara
 import "./App.css";
-import SiteBar from "./components/Navbar";
+import Header from "./components/Header"; //tara
 import Podcasts from "./components/podcast/Podcasts";
-import Auth from "./auth/Auth";
-import Example from "./components/podcast/Card";
-import Podcast from "./components/podcast/Podcast";
-// import Home from "./components/Home";
+import Footer from "./components/Footer"; //tara
+import FavoritesFetch from "./components/podcast/FavoritesFetch";
+import FavoritesDisplay from "./components/podcast/FavoritesDisplay";
+import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
 
+import {
+  //tara
+  BrowserRouter as Router,
+} from "react-router-dom";
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
-
-  const clearToken = () => {
-    localStorage.clear();
-    setSessionToken("");
-  };
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -29,20 +29,22 @@ function App() {
     console.log(sessionToken);
   };
 
-  const protectedViews = () => {
-    return sessionToken === localStorage.getItem("token") ? (
-      <Podcasts token={sessionToken} />
-    ) : (
-      <Auth updateToken={updateToken} />
-    );
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken("");
   };
 
   return (
-    <div className="App">
-      <SiteBar clearToken={clearToken} />
-      {protectedViews()}
-      <Example name={Podcast.title_original}/>
-      {/* <Podcasts /> */}
+    <div className="page-container">
+      <div className="content-wrap">
+        <Router>
+        <Header />
+        </Router>
+        <Podcasts />
+        <FavoritesFetch />
+        <FavoritesDisplay />
+        <Footer />
+      </div>
     </div>
   );
 }

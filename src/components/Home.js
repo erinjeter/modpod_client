@@ -1,13 +1,11 @@
-//THIS IS THE HOMEPAGE
-
-import React from "react"; // The import needed to build a react app, needed for the React.StrictMode> component
-import {} from "react-router-dom";
-import SiteBar from "./Navbar";
+import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <SiteBar />
+    <div className="main">
+      <div className="mainDiv">
+    
+      </div>
     </div>
   );
 };
