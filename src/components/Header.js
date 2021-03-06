@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as ReactBootStrap from "react-bootstrap";
-import Podcasts from "../components/podcast/Podcasts"
+import Podcasts from "../components/podcast/Podcasts";
 // import Modal from "react-responsive-modal";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
@@ -67,10 +67,6 @@ const Header = (props) => {
             <ReactBootStrap.Nav.Link href="/favorites">
               Favorites
             </ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="/history">
-              History
-            </ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="/test">Test</ReactBootStrap.Nav.Link>
           </ReactBootStrap.Nav>
 
           <ReactBootStrap.Form inline>
@@ -142,22 +138,20 @@ const Header = (props) => {
             Get Started Absolutely<span> Free!</span>
           </h2>
           <span className="subtitle">No credit card needed</span>
-   
-            <div className="form-group">
-              <Signup
-                updateToken={updateToken}
-                setSignup={setSignup}
-                type="password"
-                name="pass"
-                className="form-control"
-                placeholder="Password"
-                required=""
-                autocomplete="off"
-                aria-required="true"
-              />
-            </div>
-          </div>
 
+          <div className="form-group">
+            <Signup
+              updateToken={updateToken}
+              setSignup={setSignup}
+              type="password"
+              name="pass"
+              className="form-control"
+              placeholder="Password"
+              required=""
+              autocomplete="off"
+              aria-required="true"
+            />
+          </div>
         </div>
       </Modal>
 
@@ -183,7 +177,6 @@ const Header = (props) => {
                 aria-required="true"
               />
             </div>
-
           </form>
         </div>
       </Modal>

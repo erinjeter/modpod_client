@@ -27,6 +27,7 @@ const Podcasts = () => {
   const [published_after, setPublished_After] = useState("");
   const [language, setLanguage] = useState("");
   const [offset, setOffset] = useState(0);
+  const [searchGenre, setSearchGenre] = useState(false);
 
   var myHeaders = new Headers();
   myHeaders.append("X-ListenAPI-Key", "d92b6516b8234d67bb4fd1ed4dbdc66c");
@@ -47,26 +48,25 @@ const Podcasts = () => {
       });
   };
   const handleSubmit = (e) => {
-    e.preventDefault();  
-    setOffset(0);  
+    e.preventDefault();
+    setOffset(0);
     podFetch();
-    };
+  };
 
-    
- const changeOffset = (event, direction) => {
-  event.preventDefault();
-  if(direction === 'down') {
-    if(offset > 0) {
-      setOffset(offset + 1);
+  const changeOffset = (event, direction) => {
+    event.preventDefault();
+    if (direction === "down") {
+      if (offset > 0) {
+        setOffset(offset + 1);
         podFetch();
       }
     }
 
-    if(direction === 'up') {
+    if (direction === "up") {
       setOffset(offset + 1);
       podFetch();
-      }
-    };
+    }
+  };
 
   return (
     <div className="main">
@@ -76,16 +76,21 @@ const Podcasts = () => {
           type="text"
           name="search"
           onChange={(e) => setSearch(e.target.value)}
-        required
+          required
         />
         <br />
 
-     {/* <span>Published After: </span>
+        {/* <span>Published After: </span>
          <input type="date" name="published_after" pattern="[0-9]{8}" onChange={(e) => setPublished_After(e.target.value)} />
          <br /> */}
 
         <Label for="exampleSelect">Select Genre</Label>
-        <Input id="genreSelect" type="select" name="select" onChange={(e) => setGenre_Ids(e.target.value)}>
+        <Input
+          id="genreSelect"
+          type="select"
+          name="select"
+          onChange={(e) => setGenre_Ids(e.target.value)}
+        >
           <option>Any</option>
           <option value="144">Personal Finance</option>
           <option value="151">Locally Focused</option>
@@ -114,15 +119,10 @@ const Podcasts = () => {
       </form>
 
       <CardColumns className="col d-flex align-content-start flex-wrap">
-      
-      {podcasts.length > 0 ? podcasts.map(podcast=> (
-        <SearchResult podcast={podcast} changeOffsetNum={changeOffset}/>
-      )) : <strong>No Results. Please try a different search.</strong>}
-       
-      
-       </CardColumns>
-     
-   
+        {podcasts.map((podcast) => (
+          <SearchResult podcast={podcast} changeOffsetNum={changeOffset} />
+        ))}
+      </CardColumns>
     </div>
   );
 };

@@ -13,7 +13,6 @@ import Footer from "./components/Footer"; //tara
 import FavoritesFetch from "./components/podcast/FavoritesFetch";
 import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
 
-
 import {
   //tara
   BrowserRouter as Router,
@@ -43,9 +42,8 @@ function App() {
   return (
     <div className="page-container">
       <div className="content-wrap">
-
         <Router>
-      
+          <Header />
         </Router>
         <Podcasts />
         <FavoritesFetch />

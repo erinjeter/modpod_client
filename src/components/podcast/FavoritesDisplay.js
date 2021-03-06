@@ -8,6 +8,7 @@ import {
   CardFooter,
   CardBody,
   Collapse,
+  CardGroup,
   Col,
   Row,
   Container,
@@ -22,7 +23,8 @@ const baseURL = "https://listen-api.listennotes.com/api/v2";
 const FavoritesDisplay = (props) => {
 
     const [fPodcasts, setFPodcasts] = useState([]);
-
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen);
 
     var myHeaders = new Headers();
     myHeaders.append("X-ListenAPI-Key", "d92b6516b8234d67bb4fd1ed4dbdc66c");
@@ -48,11 +50,43 @@ const FavoritesDisplay = (props) => {
     }, []);
 
     return (
-      <Card>
+      <>
+      <CardGroup
+        body
+        inverse
+        style={{ backgroundColor: "darkorange", borderColor: "#333", fontSize: "10px "}}
+        className="p-2 col-2"
+        key={fPodcasts.id}
+        id="searchCardCss"
+      >
+        <CardImg src={fPodcasts?.image} top width="100%"/>
         <CardBody>
-          <CardTitle>{fPodcasts?.title}</CardTitle>
+          <CardTitle id="cardTitle" tag="h6">
+            {fPodcasts?.title}
+          </CardTitle>
+          <CardText id="cardText">{fPodcasts?.description}</CardText>
+          {/* <Button color="info" size="lg" block>More Info</Button> */}
+
+          <Button
+            color="primary"
+            onClick={toggle}
+            style={{ marginBottom: "1rem" }}
+          >
+           More Info
+          </Button>
+          <Collapse isOpen={isOpen}>
+            <Card id="toggleCard">
+              <CardBody>{fPodcasts?.description}</CardBody>
+            </Card>
+            <Button href={fPodcasts?.website} target="_blank">
+              Listen Here
+            </Button>
+          </Collapse>
         </CardBody>
-      </Card>
+      </CardGroup>
+    </>
+
+    
     );
   };
 
