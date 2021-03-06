@@ -12,13 +12,7 @@ import Home from "./components/Home"; //tara
 import Footer from "./components/Footer"; //tara
 import FavoritesFetch from "./components/podcast/FavoritesFetch";
 import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
-// import ReviewFetch from "./components/podcast/ReviewFetch";
-// import Genre from "./components/podcast/Genre"
-// import RandomPod from "./components/podcast/RandomPod"
-// import Cards from './components/Cards';//tara
-// import Carousel from './components/Carousel';//tara
-// import Navbar from './components/Navbar'; //tara
-// import Navigation from "./components/Navigation";//tara
+
 
 import {
   //tara
@@ -46,31 +40,15 @@ function App() {
     setSessionToken("");
   };
 
-  const protectedViews = () => {
-    return sessionToken === localStorage.getItem("token") ? (
-      <Podcasts token={sessionToken} />
-    ) : (
-      <Auth updateToken={updateToken} />
-    );
-  };
-
   return (
     <div className="page-container">
       <div className="content-wrap">
-      <Header clearToken={clearToken}/>
-        {protectedViews()}
+
         <Router>
       
-          {/* <Navbar /> */}
-          {/* <Home /> */}
-          {/* <History /> */}
-          {/* <IdFetch /> */}
         </Router>
-        {/* <RandomPod /> */}
-        {/* <Genre /> */}
         <Podcasts />
         <FavoritesFetch />
-        {/* <ReviewFetch /> */}
         <Footer />
       </div>
     </div>
