@@ -31,14 +31,6 @@ const Header = (props) => {
     setSessionToken("");
   };
 
-  // const protectedViews = () => {
-  //   return sessionToken === localStorage.getItem("token") ? (
-  //     <Signup token={sessionToken} />
-  //   ) : (
-  //     <Login updateToken={updateToken} />
-  //   );
-  // };
-
   const [signup, setSignup] = useState(false);
   const [login, setLogin] = useState(false);
   const [logout, setLogout] = useState(false);
