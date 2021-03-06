@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.css"; //tara
 import "./App.css";
 
 import Header from "./components/Header"; //tara
-import History from "./components/History"; //tara
 
 import Podcasts from "./components/podcast/Podcasts";
 import Auth from "./auth/Auth";
@@ -47,6 +46,7 @@ function App() {
         </Router>
         <Podcasts />
         <FavoritesFetch />
+        <FavoritesDisplay />
         <Footer />
       </div>
     </div>

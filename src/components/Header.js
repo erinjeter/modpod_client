@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import * as ReactBootStrap from "react-bootstrap";
 import Podcasts from "../components/podcast/Podcasts";
-// import Modal from "react-responsive-modal";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 import Home from "./Home";
-import History from "./History";
-import Test from "./Test";
 import Carousel from "./Carousel";
 
 import { Route, Link, Text, Nav, Navbar, Switch } from "react-router-dom";
@@ -69,16 +66,7 @@ const Header = (props) => {
             </ReactBootStrap.Nav.Link>
           </ReactBootStrap.Nav>
 
-          <ReactBootStrap.Form inline>
-            {/* <ReactBootStrap.FormControl
-              type="text"
-              placeholder="Find Podcasts"
-              className="mr-sm-2"
-            /> */}
-            {/* <ReactBootStrap.Button variant="primary">
-              Search
-            </ReactBootStrap.Button> */}
-          </ReactBootStrap.Form>
+          <ReactBootStrap.Form inline></ReactBootStrap.Form>
 
           <ul className="nav navbar-nav navbar-right">
             <li>
@@ -117,12 +105,6 @@ const Header = (props) => {
         <Switch>
           <Route exact path="/home">
             <Home />
-          </Route>
-          <Route exact path="/history">
-            <History />
-          </Route>
-          <Route exact path="/test">
-            <Test />
           </Route>
           <Route exact path="/">
             <Home />
@@ -164,20 +146,21 @@ const Header = (props) => {
             Login and Get <span>Started</span>
           </h2>
           <span className="subtitle">Complete the form below!</span>
-          <form className="contact-form form-validate4" novalidate="novalidate">
-            <div className="form-group">
-              <Login
-                updateToken={updateToken}
-                className="form-control"
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                required=""
-                autocomplete="off"
-                aria-required="true"
-              />
-            </div>
-          </form>
+          {/* <form className="contact-form form-validate4" novalidate="novalidate"> */}
+          <div className="form-group">
+            <Login
+              updateToken={updateToken}
+              setLogin={setLogin}
+              className="form-control"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              required=""
+              autocomplete="off"
+              aria-required="true"
+            />
+          </div>
+          {/* </form> */}
         </div>
       </Modal>
     </header>
