@@ -48,10 +48,10 @@ function App() {
 
   const protectedViews = () => {
     return sessionToken === localStorage.getItem("token") ? (
-      <ReviewIndex token={sessionToken} />  //changed from Podcasts to ReviewIndex - Lesley
+      <Podcasts token={sessionToken} />
     ) : (
-        <Auth updateToken={updateToken} />
-      );
+      <Auth updateToken={updateToken} />
+    );
   };
 
   return (
@@ -60,8 +60,7 @@ function App() {
       <Header clearToken={clearToken}/>
         {protectedViews()}
         <Router>
-          
-
+      
           {/* <Navbar /> */}
           {/* <Home /> */}
           {/* <History /> */}

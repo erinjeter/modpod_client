@@ -27,13 +27,16 @@ const FavoritesFetch = () => {
 
 
   const fetchFaves = () => {
-    try {
-      fetch("http://localhost:3000/favorites/mine", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: localStorage.getItem("token"),
-        },
+    fetch("http://localhost:3000/favorites/mine", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then(json => { 
+        setAllFaves(json);
       })
         .then(res => res.json())
         .then((logFave) => {
@@ -51,10 +54,10 @@ const FavoritesFetch = () => {
 
   return (
     <div>
-      {/* {allFaves.map((podcast) => {
-        <FavoritesDisplay podcastid={podcast.podcastid} />;
-      })} */}
-          </div>
+          {allFaves.map((podcast) => (
+            <FavoritesDisplay podcast={podcast.podcastid}/>
+          ))}
+    </div>
   );
 };
 
