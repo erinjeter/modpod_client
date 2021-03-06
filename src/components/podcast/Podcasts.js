@@ -9,6 +9,8 @@ import {
   Col,
   Label,
   Input,
+  Form,
+  FormGroup,
 } from "reactstrap";
 import "./search.css";
 // import SendFave from "./Favorites";
@@ -79,11 +81,9 @@ const Podcasts = () => {
           required
         />
         <br />
-
         {/* <span>Published After: </span>
-         <input type="date" name="published_after" pattern="[0-9]{8}" onChange={(e) => setPublished_After(e.target.value)} />
-         <br /> */}
-
+           <input type="date" name="published_after" pattern="[0-9]{8}" onChange={(e) => setPublished_After(e.target.value)} />
+           <br /> */}
         <Label for="exampleSelect">Select Genre</Label>
         <Input
           id="genreSelect"
@@ -117,7 +117,6 @@ const Podcasts = () => {
         <br />
         <button type="submit">Submit</button>
       </form>
-
       <CardColumns className="col d-flex align-content-start flex-wrap">
         {podcasts.map((podcast) => (
           <SearchResult podcast={podcast} changeOffsetNum={changeOffset} />

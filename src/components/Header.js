@@ -70,14 +70,14 @@ const Header = (props) => {
           </ReactBootStrap.Nav>
 
           <ReactBootStrap.Form inline>
-            <ReactBootStrap.FormControl
+            {/* <ReactBootStrap.FormControl
               type="text"
-              placeholder="Search"
+              placeholder="Find Podcasts"
               className="mr-sm-2"
-            />
-            <ReactBootStrap.Button variant="primary">
+            /> */}
+            {/* <ReactBootStrap.Button variant="primary">
               Search
-            </ReactBootStrap.Button>
+            </ReactBootStrap.Button> */}
           </ReactBootStrap.Form>
 
           <ul className="nav navbar-nav navbar-right">
