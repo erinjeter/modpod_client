@@ -4,13 +4,7 @@ import {
   CardImg,
   CardTitle,
   CardText,
-  CardLink,
-  CardDeck,
-  CardFooter,
   CardBody,
-  Col,
-  Row,
-  Container,
   Collapse,
 } from "reactstrap";
 import SendFave from "./Favorites";
@@ -40,8 +34,7 @@ const SearchResult = ({ podcast }) => {
             {podcast.title_original}
           </CardTitle>
           <CardText id="cardText">{podcast.description_highlighted}</CardText>
-          {/* <Button color="info" size="lg" block>More Info</Button> */}
-
+          
           <Button
             color="primary"
             onClick={toggle}
@@ -59,11 +52,7 @@ const SearchResult = ({ podcast }) => {
             <SendFave podcastid={podcast.id} />
           </Collapse>
         </CardBody>
-      </Card>
-      {/* <div>
-        <button onClick={(e) => podcast.changeOffset(e, "down")}>Previous 10</button>
-        <button onClick={(e) => podcast.changeOffset(e, "up")}>Next 10</button>
-      </div> */}
+      </Card>      
     </>
   );
 };

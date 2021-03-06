@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Podcast from "./Podcast";
+import React, { useState } from "react";
 import SearchResult from "./SearchResult";
 import {
-  CardDeck,
   CardColumns,
-  Container,
-  Row,
-  Col,
   Label,
   Input,
 } from "reactstrap";
 import "./search.css";
-// import SendFave from "./Favorites";
 
 const baseURL = "https://listen-api.listennotes.com/api/v2";
 
@@ -19,7 +13,6 @@ const endpt = "search";
 
 const Podcasts = () => {
   const [podcasts, setPodcasts] = useState([]);
-  // const [ results, setResults ] = useState([]);
   const [search, setSearch] = useState("");
   const [sort_by_date, setSort_By_Date] = useState("");
   const [len_max, setLen_Max] = useState("");
@@ -51,7 +44,6 @@ const Podcasts = () => {
     setOffset(0);  
     podFetch();
     };
-
     
  const changeOffset = (event, direction) => {
   event.preventDefault();
@@ -79,10 +71,6 @@ const Podcasts = () => {
         required
         />
         <br />
-
-     {/* <span>Published After: </span>
-         <input type="date" name="published_after" pattern="[0-9]{8}" onChange={(e) => setPublished_After(e.target.value)} />
-         <br /> */}
 
         <Label for="exampleSelect">Select Genre</Label>
         <Input id="genreSelect" type="select" name="select" onChange={(e) => setGenre_Ids(e.target.value)}>

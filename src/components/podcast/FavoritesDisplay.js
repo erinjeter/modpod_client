@@ -14,6 +14,7 @@ import {
 } from "reactstrap";
 import FavoritesFetch from "./FavoritesFetch";
 import { useEffect, useState } from "react";
+import ReviewIndex from "./reviews/ReviewIndex";
 // import FavoritesCard from "./FavoritesCard";
 
 const baseURL = "https://listen-api.listennotes.com/api/v2";
@@ -51,6 +52,7 @@ const FavoritesDisplay = (props) => {
       <Card>
         <CardBody>
           <CardTitle>{fPodcasts?.title}</CardTitle>
+        <ReviewIndex />
         </CardBody>
       </Card>
     );
