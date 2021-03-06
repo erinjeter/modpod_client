@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import * as ReactBootStrap from "react-bootstrap";
-import { Modal } from "reactstrap";
+
+import Podcasts from "../components/podcast/Podcasts";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 import Home from "./Home";
 import Carousel from "./Carousel";
 import { Route, Switch } from "react-router-dom";
@@ -47,21 +50,10 @@ const Header = (props) => {
             <ReactBootStrap.Nav.Link href="/favorites">
               Favorites
             </ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="/history">
-              History
-            </ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="/test">Test</ReactBootStrap.Nav.Link>
           </ReactBootStrap.Nav>
-          <ReactBootStrap.Form inline>
-            <ReactBootStrap.FormControl
-              type="text"
-              placeholder="Search"
-              className="mr-sm-2"
-            />
-            <ReactBootStrap.Button variant="primary">
-              Search
-            </ReactBootStrap.Button>
-          </ReactBootStrap.Form>
+
+          <ReactBootStrap.Form inline></ReactBootStrap.Form>
+
           <ul className="nav navbar-nav navbar-right">
             <li>
               <button
@@ -111,6 +103,7 @@ const Header = (props) => {
             Get Started Absolutely<span> Free!</span>
           </h2>
           <span className="subtitle">No credit card needed</span>
+
           <div className="form-group">
             <Signup
               updateToken={updateToken}
@@ -134,20 +127,21 @@ const Header = (props) => {
             Login and Get <span>Started</span>
           </h2>
           <span className="subtitle">Complete the form below!</span>
-          <form className="contact-form form-validate4" novalidate="novalidate">
-            <div className="form-group">
-              <Login
-                updateToken={updateToken}
-                className="form-control"
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                required=""
-                autocomplete="off"
-                aria-required="true"
-              />
-            </div>
-          </form>
+
+          <div className="form-group">
+            <Login
+              updateToken={updateToken}
+              setLogin={setLogin}
+              className="form-control"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              required=""
+              autocomplete="off"
+              aria-required="true"
+            />
+          </div>
+
         </div>
       </Modal>
     </header>

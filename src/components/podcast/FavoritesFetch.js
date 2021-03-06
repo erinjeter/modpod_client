@@ -16,13 +16,7 @@ const baseURL = "https://listen-api.listennotes.com/api/v2";
 const FavoritesFetch = () => {
   //FETCH FROM FAVORITES TABLE
   const [allFaves, setAllFaves] = useState([]);
-  // let testFaves = async () => {await fetch("http://localhost:3000/favorites/mine", {
-  //   method: "GET",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     Authorization: localStorage.getItem("token"),
-  //   },
-  // })};
+
   const fetchFaves = () => {
     fetch("http://localhost:3000/favorites/mine", {
       method: "PUT",      
@@ -36,9 +30,6 @@ const FavoritesFetch = () => {
         setAllFaves(json);
         })
       .catch((err) => console.log(err));
-    // } .catch(err) {
-    //   console.log(err);
-    // }
   };
   useEffect(() => {
     fetchFaves();

@@ -17,7 +17,6 @@ const SearchResult = ({ podcast }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
-
   return (
     <>
       <Card
@@ -40,7 +39,7 @@ const SearchResult = ({ podcast }) => {
             onClick={toggle}
             style={{ marginBottom: "1rem" }}
           >
-           More Info
+            More Info
           </Button>
           <Collapse isOpen={isOpen}>
             <Card id="toggleCard">
