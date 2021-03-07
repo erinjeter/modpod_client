@@ -12,6 +12,10 @@ import {
   Col,
   Row,
   Container,
+  Form,
+  FormGroup,
+  Label,
+  Input
 } from "reactstrap";
 import FavoritesFetch from "./FavoritesFetch";
 import { useEffect, useState } from "react";
@@ -22,9 +26,10 @@ const baseURL = "https://listen-api.listennotes.com/api/v2";
 
 
 const FavoritesDisplay = (props) => {
-
     const [fPodcasts, setFPodcasts] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
+    const [editReview, setEditReview] = useState("");
+
     const toggle = () => setIsOpen(!isOpen);
 
     var myHeaders = new Headers();
@@ -46,8 +51,24 @@ const FavoritesDisplay = (props) => {
         });
     };
 
+    const reviewUpdate = (event) => {
+      event.preventDefault();
+      fetch(`http://localhost:3000/favorites/update/${props.id}`, {
+          method: 'PUT',
+          body: JSON.stringify({favorites: {review: editReview}}),
+          headers: new Headers({
+              'Content-Type': 'application/json',
+              'Authorization': localStorage.getItem("token"),
+          })
+      }) .then((res) => {
+        console.log(props.id, props.cast.review, editReview);
+          // props.review();
+          // props.updateOff();
+      })
+  }
     useEffect(() => {
       apiFetch();
+      console.log("test");
     }, []);
 
     return (
@@ -83,7 +104,15 @@ const FavoritesDisplay = (props) => {
             <Button href={fPodcasts?.website} target="_blank">
               Listen Here
             </Button>
-          <ReviewIndex />
+          {/* <ReviewIndex /> */}
+          <Form onSubmit={reviewUpdate}>
+            <FormGroup>
+            <Label htmlFor="review"> Edit Review:</Label>
+                       <Input name="review" value={editReview} onChange={(e) => setEditReview(e.target.value)}/>
+            </FormGroup>
+            <Button type='submit' color="success">submit</Button>
+           
+        </Form>
           </Collapse>
         </CardBody>
       </CardGroup>
