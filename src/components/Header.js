@@ -60,6 +60,7 @@ const Header = (props) => {
           <ul className="nav navbar-nav navbar-right">
             <li>
               <button
+              style={{color: "orange"}}
                 className="btn btn-primary-outline"
                 id="signup"
                 onClick={toggle_signup}
@@ -69,6 +70,7 @@ const Header = (props) => {
             </li>
             <li>
               <button
+              style={{color: "orange"}}
                 className="btn btn-primary-outline"
                 id="login"
                 onClick={toggle_login}
@@ -78,6 +80,7 @@ const Header = (props) => {
             </li>
             <li>
               <button
+              style={{color: "orange"}}
                 className="btn btn-primary-outline"
                 id="logout"
                 onClick={clearToken}

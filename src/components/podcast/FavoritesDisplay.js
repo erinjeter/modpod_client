@@ -28,7 +28,7 @@ const baseURL = "https://listen-api.listennotes.com/api/v2";
 const FavoritesDisplay = (props) => {
     const [fPodcasts, setFPodcasts] = useState([]);
     const [isOpen, setIsOpen] = useState(false);
-    const [editReview, setEditReview] = useState("");
+    const [editReview, setEditReview] = useState(props.cast.review);
 
     const toggle = () => setIsOpen(!isOpen);
 
@@ -66,18 +66,35 @@ const FavoritesDisplay = (props) => {
           // props.updateOff();
       })
   }
-    useEffect(() => {
-      apiFetch();
-      console.log("test");
-    }, []);
 
+  useEffect(() => {
+    apiFetch();
+    console.log("test");
+  }, []);
+
+  const deleteFave = (event) => {
+    // event.preventDefault();
+    fetch(`http://localhost:3000/favorites/delete/${props.id}`, {
+        method: 'DELETE',
+        // body: JSON.stringify({favorites: {review: editReview}}),
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem("token"),
+        })
+    }) 
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Fave Deleted", data)
+            
+})
+  }
     return (
       <>
-      <CardGroup
+      <Card
         body
         inverse
         style={{ backgroundColor: "darkorange", borderColor: "#333", fontSize: "10px "}}
-        className="p-2 col-2"
+        className="p-3 col-2"
         key={fPodcasts.id}
         id="searchCardCss"
       >
@@ -110,16 +127,18 @@ const FavoritesDisplay = (props) => {
             <Label htmlFor="review"> Edit Review:</Label>
                        <Input name="review" value={editReview} onChange={(e) => setEditReview(e.target.value)}/>
             </FormGroup>
-            <Button type='submit' color="success">submit</Button>
-           
+            <Button type='submit' color="success" style={{ marginBottom: "1rem" }}>Submit Review</Button>
+                     
         </Form>
+        <Button color="danger" onClick={() => {deleteFave(props.id)}}>Remove Favorite</Button>
           </Collapse>
         </CardBody>
-      </CardGroup>
+      </Card>
     </>
 
     
     );
-  };
+  
+}
 
   export default FavoritesDisplay;
