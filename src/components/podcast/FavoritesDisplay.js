@@ -66,10 +66,29 @@ const FavoritesDisplay = (props) => {
           // props.updateOff();
       })
   }
-    useEffect(() => {
-      apiFetch();
-      console.log("test");
-    }, []);
+
+  useEffect(() => {
+    apiFetch();
+    console.log("test");
+  }, []);
+
+  const deleteFave = (props) => {
+   
+    fetch(`http://localhost:3000/favorites/delete/${props.id}`, {
+        method: 'DELETE',
+        // body: JSON.stringify({favorites: {review: editReview}}),
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': localStorage.getItem("token"),
+        })
+    }) .then((res) => {
+      console.log("Fave Deleted");
+        // props.review();
+        // props.updateOff();
+    }) .then(() => props.fetchFaves())
+}
+
+ 
 
     return (
       <>
@@ -111,6 +130,8 @@ const FavoritesDisplay = (props) => {
                        <Input name="review" value={editReview} onChange={(e) => setEditReview(e.target.value)}/>
             </FormGroup>
             <Button type='submit' color="success">submit</Button>
+
+            {/* <Button color="danger" onClick={() => deleteFave(e.target.value)}>Remove Favorite</Button> */}
            
         </Form>
           </Collapse>
