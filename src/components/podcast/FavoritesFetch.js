@@ -8,6 +8,7 @@ import {
   CardDeck,
   CardSubtitle,
   CardBody,
+  CardColumns,
 } from "reactstrap";
 import FavoritesDisplay from "./FavoritesDisplay";
 import ReviewEdit from "./reviews/ReviewEdit";
@@ -29,9 +30,9 @@ const FavoritesFetch = () => {
     })
       .then((res) => res.json())
       .then(json => { 
-        setAllFaves(json);
+        setAllFaves(json)
         })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
   };
 
     useEffect(() => {
@@ -39,12 +40,13 @@ const FavoritesFetch = () => {
   }, []);
   return (
     <div>
+    <CardColumns className="col d-flex align-content-start flex-wrap">
           {allFaves.map((podcast) => (
-            <FavoritesDisplay podcast={podcast.podcastid} id={podcast.id} cast={podcast}/> 
-           
-          )) }
-          
+            <FavoritesDisplay podcast={podcast.podcastid} id={podcast.id} cast={podcast}/>            
+          ))}
+               
           {console.log(allFaves)}
+          </CardColumns>
           
     </div>
   );
