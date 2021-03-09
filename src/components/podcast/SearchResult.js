@@ -33,7 +33,9 @@ const SearchResult = ({ podcast }) => {
           <CardTitle id="cardTitle" tag="h6" style={{ color: "rgb(51, 51, 51)" }}>
             {podcast.title_original}
           </CardTitle>
+
           <CardText id="cardText" style={{ color: "rgb(51, 51, 51)" }}>{podcast.description_highlighted} </CardText>
+
 
           <Button
             style={{ backgroundColor: "rgb(2, 120, 180)" }}
@@ -52,8 +54,8 @@ const SearchResult = ({ podcast }) => {
             <Button href={podcast.website} target="_blank" style={{ marginBottom: "1rem" }}>
               Listen Here
             </Button>
-            <SendFave podcastid={podcast.id} />
           </Collapse>
+          <SendFave podcastid={podcast.id} />
         </CardBody>
       </Card>
     </>

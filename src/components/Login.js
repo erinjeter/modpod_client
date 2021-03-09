@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 const Login = (props) => {
@@ -19,6 +19,7 @@ const Login = (props) => {
       .then((response) => response.json())
       .then((data) => {
         props.updateToken(data.sessionToken);
+        props.setLogin(false);
       });
   };
 

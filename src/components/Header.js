@@ -34,6 +34,55 @@ const Header = (props) => {
   const toggle_signup = () => setSignup(!signup);
   const toggle_login = () => setLogin(!login);
   const toggle_logout = () => setLogout(!logout);
+
+  function authButton() {
+    return localStorage.getItem("token") != null ? (
+      ""
+    ) : (
+      <>
+        <li>
+          <button
+            style={{ color: "orange" }}
+            className="btn btn-primary-outline"
+            id="signup"
+            onClick={toggle_signup}
+          >
+            Signup
+          </button>
+        </li>
+        <li>
+          <button
+            style={{ color: "white" }}
+            className="btn btn-primary-outline"
+            id="login"
+            onClick={toggle_login}
+          >
+            Login
+          </button>
+        </li>
+      </>
+    );
+  }
+
+  function logoutButton() {
+    return localStorage.getItem("token") === null ? (
+      ""
+    ) : (
+      <>
+        <li>
+          <button
+            style={{ color: "white" }}
+            className="btn btn-primary-outline"
+            id="logout"
+            onClick={clearToken}
+          >
+            Logout
+          </button>
+        </li>
+      </>
+    );
+  }
+
   return (
     <header>
       <ReactBootStrap.Navbar
@@ -60,36 +109,11 @@ const Header = (props) => {
           <ReactBootStrap.Form inline></ReactBootStrap.Form>
 
           <ul className="nav navbar-nav navbar-right">
-            <li>
-              <button
-                style={{ color: "white" }}
-                className="btn btn-primary-outline"
-                id="signup"
-                onClick={toggle_signup}
-              >
-                Signup
-              </button>
-            </li>
-            <li>
-              <button
-                style={{ color: "white" }}
-                className="btn btn-primary-outline"
-                id="login"
-                onClick={toggle_login}
-              >
-                Login
-              </button>
-            </li>
-            <li>
-              <button
-                style={{ color: "white" }}
-                className="btn btn-primary-outline"
-                id="logout"
-                onClick={clearToken}
-              >
-                Logout
-              </button>
-            </li>
+            
+
+            {authButton()}
+
+            {logoutButton()}
           </ul>
         </ReactBootStrap.Navbar.Collapse>
       </ReactBootStrap.Navbar>
@@ -97,11 +121,8 @@ const Header = (props) => {
       <div className="header-route">
         <Switch>
           <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
+        <Podcasts />
+        </Route>
           <Route exact path="/favorites">
             <FavoritesFetch />
           </Route>
@@ -137,7 +158,7 @@ const Header = (props) => {
           <h2>
             Login and Get <span>Started</span>
           </h2>
-          <span className="subtitle">Complete the form below!</span>
+          {/* <span className="subtitle">Complete the form below!</span> */}
 
           <div className="form-group">
             <Login
@@ -152,7 +173,6 @@ const Header = (props) => {
               aria-required="true"
             />
           </div>
-
         </div>
       </Modal>
     </header>
