@@ -33,7 +33,7 @@ const SearchResult = ({ podcast }) => {
             {podcast.title_original}
           </CardTitle>
           <CardText id="cardText">{podcast.description_highlighted}</CardText>
-          
+
           <Button
             color="primary"
             onClick={toggle}
@@ -48,10 +48,10 @@ const SearchResult = ({ podcast }) => {
             <Button href={podcast.website} target="_blank">
               Listen Here
             </Button>
-            <SendFave podcastid={podcast.id} />
           </Collapse>
+          <SendFave podcastid={podcast.id} />
         </CardBody>
-      </Card>      
+      </Card>
     </>
   );
 };
