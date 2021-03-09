@@ -40,11 +40,8 @@ function App() {
     <div className="page-container">
       <div className="content-wrap">
         <Router>
-        <Header />
+          <Header token={sessionToken} />
         </Router>
-       
-        {/* <FavoritesFetch />  //Lesley*/} 
-        {/* <FavoritesDisplay />  //Lesley*/}
         <Footer />
       </div>
     </div>
