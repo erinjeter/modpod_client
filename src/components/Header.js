@@ -147,12 +147,15 @@ const Header = (props) => {
       <Carousel />
       <div className="header-route">
         <Switch>
-          <Route exact path="/home">
+          {/* <Route exact path="/home">
             <Home />
           </Route>
           <Route exact path="/">
             <Home />
-          </Route>
+          </Route> */}
+          <Route exact path="/home">
+        <Podcasts />
+        </Route>
           <Route exact path="/favorites">
             <FavoritesFetch />
           </Route>
