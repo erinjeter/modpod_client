@@ -46,7 +46,7 @@ const FavoritesFetch = () => {
         className="col d-flex align-content-start flex-wrap"
         style={{ marginTop: "2rem" }}
       >
-        {allFaves.map((podcast) => (
+        {allFaves?.map((podcast) => (
           <FavoritesDisplay
             podcast={podcast.podcastid}
             id={podcast.id}
