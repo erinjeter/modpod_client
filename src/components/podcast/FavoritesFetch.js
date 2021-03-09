@@ -14,7 +14,6 @@ import FavoritesDisplay from "./FavoritesDisplay";
 import APIURL from "../../helpers/environment";
 import ReviewEdit from "./reviews/ReviewEdit";
 // import ReviewIndex from "./reviews/ReviewIndex";
-import APIURL from "../../helpers/environment";
 
 const baseURL = "https://listen-api.listennotes.com/api/v2";
 const FavoritesFetch = () => {

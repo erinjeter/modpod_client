@@ -119,7 +119,7 @@ const Header = (props) => {
       <Carousel />
       <div className="header-route">
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
             <Podcasts />
           </Route>
           <Route exact path="/favorites">
