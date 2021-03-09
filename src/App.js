@@ -39,11 +39,11 @@ function App() {
     <div className="page-container">
       <div className="content-wrap">
         <Router>
-        <Header />
+          <Header token={sessionToken} />
         </Router>
         <Podcasts />
         {/* <RandomPod /> */}
-        {/* <FavoritesFetch />  //Lesley*/} 
+        {/* <FavoritesFetch />  //Lesley*/}
         {/* <FavoritesDisplay />  //Lesley*/}
         <Footer />
       </div>
