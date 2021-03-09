@@ -2,7 +2,7 @@
     /* width: 60% !important; */
     
     margin: 10px !important;
-       border-radius: 3%;
+       /* border-radius: 3%; */
        height: 30%;
        
 }
@@ -43,7 +43,7 @@
 }
 
 #search {
-    background-color: orange;
+    background-color: rgb(192, 192, 192);
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -54,4 +54,8 @@
     display: flex;
     align-items: center;
 
+}
+
+Button {
+    background-color: blue;
 }

@@ -39,6 +39,7 @@ const Header = (props) => {
       <ReactBootStrap.Navbar
         collapseOnSelect
         expand="md"
+
         bg="dark"
         variant="dark"
       >
@@ -49,8 +50,9 @@ const Header = (props) => {
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
           <ReactBootStrap.Nav className="mr-auto">
             <Link to="/favorites">
-            <ReactBootStrap.Nav.Link href="/favorites">
-              Favorites
+              <ReactBootStrap.Nav.Link href="/favorites"
+                style={{ color: "white" }}>
+                Favorites
             </ReactBootStrap.Nav.Link>
             </Link>
           </ReactBootStrap.Nav>
@@ -60,7 +62,7 @@ const Header = (props) => {
           <ul className="nav navbar-nav navbar-right">
             <li>
               <button
-              style={{color: "orange"}}
+                style={{ color: "white" }}
                 className="btn btn-primary-outline"
                 id="signup"
                 onClick={toggle_signup}
@@ -70,7 +72,7 @@ const Header = (props) => {
             </li>
             <li>
               <button
-              style={{color: "orange"}}
+                style={{ color: "white" }}
                 className="btn btn-primary-outline"
                 id="login"
                 onClick={toggle_login}
@@ -80,7 +82,7 @@ const Header = (props) => {
             </li>
             <li>
               <button
-              style={{color: "orange"}}
+                style={{ color: "white" }}
                 className="btn btn-primary-outline"
                 id="logout"
                 onClick={clearToken}
@@ -101,7 +103,7 @@ const Header = (props) => {
             <Home />
           </Route>
           <Route exact path="/favorites">
-            <FavoritesFetch/>
+            <FavoritesFetch />
           </Route>
         </Switch>
       </div>
