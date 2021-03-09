@@ -45,7 +45,7 @@ const SearchResult = ({ podcast }) => {
             <Card id="toggleCard">
               <CardBody>{podcast.description_original}</CardBody>
             </Card>
-            <Button href={podcast.website} target="_blank">
+            <Button href={podcast.website} target="_blank" style={{ marginBottom: "1rem" }}>
               Listen Here
             </Button>
             <SendFave podcastid={podcast.id} />
