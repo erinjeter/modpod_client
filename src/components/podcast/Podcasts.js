@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import SearchResult from "./SearchResult";
-import {
-  CardColumns,
-  Label,
-  Input,
-  Button,
-  Form,
-  FormGroup,
-} from "reactstrap";
+import { CardColumns, Label, Input, Button, Form, FormGroup } from "reactstrap";
 import "./search.css";
 
 const baseURL = "https://listen-api.listennotes.com/api/v2";
@@ -110,9 +103,14 @@ const Podcasts = () => {
           </Input>
         </div>
         {/* <br /> */}
-        <Button type="submit" outline color="secondary">Submit</Button>
+        <Button type="submit" outline color="secondary">
+          Submit
+        </Button>
       </form>
-      <CardColumns className="col d-flex align-content-start flex-wrap" style={{ marginTop: "2rem" }}>
+      <CardColumns
+        className="col d-flex align-content-start flex-wrap"
+        style={{ marginTop: "2rem" }}
+      >
         {podcasts.map((podcast) => (
           <SearchResult podcast={podcast} changeOffsetNum={changeOffset} />
         ))}
@@ -122,4 +120,3 @@ const Podcasts = () => {
 };
 
 export default Podcasts;
-

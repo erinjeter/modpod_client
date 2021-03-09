@@ -21,6 +21,7 @@ import FavoritesFetch from "./FavoritesFetch";
 import { useEffect, useState } from "react";
 import ReviewIndex from "./reviews/ReviewIndex";
 // import FavoritesCard from "./FavoritesCard";
+import APIURL from "../../helpers/environment";
 
 const baseURL = "https://listen-api.listennotes.com/api/v2";
 
@@ -51,7 +52,7 @@ const FavoritesDisplay = (props) => {
 
   const reviewUpdate = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:3000/favorites/update/${props.id}`, {
+    fetch(`${APIURL}/favorites/update/${props.id}`, {
       method: "PUT",
       body: JSON.stringify({ favorites: { review: editReview } }),
       headers: new Headers({
@@ -70,7 +71,7 @@ const FavoritesDisplay = (props) => {
 
   const deleteFave = (event) => {
     // event.preventDefault();
-    fetch(`http://localhost:3000/favorites/delete/${props.id}`, {
+    fetch(`${APIURL}/favorites/delete/${props.id}`, {
       method: "DELETE",
       // body: JSON.stringify({favorites: {review: editReview}}),
       headers: new Headers({
@@ -89,12 +90,8 @@ const FavoritesDisplay = (props) => {
       <Card
         body
         inverse
-
-        style={{ backgroundColor: "darkorange", borderColor: "#333", fontSize: "10px " }}
         style={{
-          backgroundColor: "darkorange",
-          borderColor: "#333",
-          fontSize: "10px ",
+          fontSize: "12px ",
         }}
         className="p-3 col-2"
         key={fPodcasts.id}
@@ -102,12 +99,16 @@ const FavoritesDisplay = (props) => {
       >
         <CardImg src={fPodcasts?.image} top width="100%" />
         <CardBody>
-
-          <CardTitle id="cardTitle" tag="h6" style={{ color: "rgb(51, 51, 51)" }}>
-
+          <CardTitle
+            id="cardTitle"
+            tag="h6"
+            style={{ color: "rgb(51, 51, 51)" }}
+          >
             {fPodcasts?.title}
           </CardTitle>
-          <CardText id="cardText" style={{ color: "rgb(51, 51, 51)" }}>{fPodcasts?.description}</CardText>
+          <CardText id="cardText" style={{ color: "rgb(51, 51, 51)" }}>
+            {fPodcasts?.description}
+          </CardText>
           {/* <Button color="info" size="lg" block>More Info</Button> */}
 
           <Button
@@ -139,14 +140,14 @@ const FavoritesDisplay = (props) => {
                 type="submit"
                 color="success"
                 style={{ marginBottom: "1rem" }}
+                outline
+                color="secondary"
               >
                 Submit Review
               </Button>
             </Form>
-
           </Collapse>
           <Button
-            color="danger"
             onClick={() => {
               deleteFave(props.id);
             }}
@@ -160,4 +161,3 @@ const FavoritesDisplay = (props) => {
 };
 
 export default FavoritesDisplay;
-

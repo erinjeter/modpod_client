@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/md";
+import APIURL from "../../helpers/environment";
 
 const SendFave = ({ podcastid }) => {
   const [faves, setFaves] = useState([]);
 
   const getFave = () => {
-    fetch("http://localhost:3000/favorites/create", {
+    fetch(`${APIURL}/favorites/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +34,9 @@ const SendFave = ({ podcastid }) => {
   }
   return (
     <div>
-      <Button onClick={() => getFave()}>Save Favorite</Button>
+      <Button onClick={() => getFave()} style={{ marginTop: "1rem" }}>
+        Save Favorite
+      </Button>
       {/* <Button onClick="getFave();faveAlert()">Save Favorite</Button> */}
     </div>
   );
