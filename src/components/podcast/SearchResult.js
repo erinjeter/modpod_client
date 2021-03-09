@@ -22,28 +22,34 @@ const SearchResult = ({ podcast }) => {
       <Card
         body
         inverse
-        style={{ backgroundColor: "darkorange", borderColor: "#333" }}
+        // style={{ backgroundColor: "rgb(160, 160, 160)" }}
+
         className="p-3 col-2"
         key={podcast.id}
         id="searchCardCss"
       >
         <CardImg variant="top" src={podcast.image} />
         <CardBody>
-          <CardTitle id="cardTitle" tag="h6">
+          <CardTitle id="cardTitle" tag="h6" style={{ color: "rgb(51, 51, 51)" }}>
             {podcast.title_original}
           </CardTitle>
-          <CardText id="cardText">{podcast.description_highlighted}</CardText>
+
+          <CardText id="cardText" style={{ color: "rgb(51, 51, 51)" }}>{podcast.description_highlighted} </CardText>
+
 
           <Button
-            color="primary"
+            style={{ backgroundColor: "rgb(2, 120, 180)" }}
+            // color="primary"
+
             onClick={toggle}
             style={{ marginBottom: "1rem" }}
+            style={{ marginTop: "2rem" }}
           >
             More Info
           </Button>
           <Collapse isOpen={isOpen}>
-            <Card id="toggleCard">
-              <CardBody>{podcast.description_original}</CardBody>
+            <Card id="toggleCard" style={{ marginTop: "1rem" }}>
+              <CardBody style={{ marginTop: "1rem" }}>{podcast.description_original}</CardBody>
             </Card>
             <Button href={podcast.website} target="_blank" style={{ marginBottom: "1rem" }}>
               Listen Here

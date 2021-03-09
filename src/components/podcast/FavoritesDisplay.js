@@ -60,8 +60,6 @@ const FavoritesDisplay = (props) => {
       }),
     }).then((res) => {
       console.log(props.id, props.cast.review, editReview);
-      // props.review();
-      // props.updateOff();
     });
   };
 
@@ -85,11 +83,14 @@ const FavoritesDisplay = (props) => {
         console.log("Fave Deleted", data);
       });
   };
+
   return (
     <>
       <Card
         body
         inverse
+
+        style={{ backgroundColor: "darkorange", borderColor: "#333", fontSize: "10px " }}
         style={{
           backgroundColor: "darkorange",
           borderColor: "#333",
@@ -101,14 +102,17 @@ const FavoritesDisplay = (props) => {
       >
         <CardImg src={fPodcasts?.image} top width="100%" />
         <CardBody>
-          <CardTitle id="cardTitle" tag="h6">
+
+          <CardTitle id="cardTitle" tag="h6" style={{ color: "rgb(51, 51, 51)" }}>
+
             {fPodcasts?.title}
           </CardTitle>
-          <CardText id="cardText">{fPodcasts?.description}</CardText>
+          <CardText id="cardText" style={{ color: "rgb(51, 51, 51)" }}>{fPodcasts?.description}</CardText>
           {/* <Button color="info" size="lg" block>More Info</Button> */}
 
           <Button
-            color="primary"
+            // color="primary"
+            style={{ backgroundColor: "rgb(2, 120, 180)" }}
             onClick={toggle}
             style={{ marginBottom: "1rem" }}
           >
@@ -139,6 +143,7 @@ const FavoritesDisplay = (props) => {
                 Submit Review
               </Button>
             </Form>
+
           </Collapse>
           <Button
             color="danger"
@@ -155,3 +160,4 @@ const FavoritesDisplay = (props) => {
 };
 
 export default FavoritesDisplay;
+

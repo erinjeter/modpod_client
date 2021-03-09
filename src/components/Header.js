@@ -52,7 +52,7 @@ const Header = (props) => {
         </li>
         <li>
           <button
-            style={{ color: "orange" }}
+            style={{ color: "white" }}
             className="btn btn-primary-outline"
             id="login"
             onClick={toggle_login}
@@ -71,7 +71,7 @@ const Header = (props) => {
       <>
         <li>
           <button
-            style={{ color: "orange" }}
+            style={{ color: "white" }}
             className="btn btn-primary-outline"
             id="logout"
             onClick={clearToken}
@@ -88,6 +88,7 @@ const Header = (props) => {
       <ReactBootStrap.Navbar
         collapseOnSelect
         expand="md"
+
         bg="dark"
         variant="dark"
       >
@@ -98,48 +99,20 @@ const Header = (props) => {
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
           <ReactBootStrap.Nav className="mr-auto">
             <Link to="/favorites">
-              <ReactBootStrap.Nav.Link href="/favorites">
+              <ReactBootStrap.Nav.Link href="/favorites"
+                style={{ color: "white" }}>
                 Favorites
-              </ReactBootStrap.Nav.Link>
+            </ReactBootStrap.Nav.Link>
             </Link>
           </ReactBootStrap.Nav>
 
           <ReactBootStrap.Form inline></ReactBootStrap.Form>
 
           <ul className="nav navbar-nav navbar-right">
-            {/* <li>
-              <button
-                style={{ color: "orange" }}
-                className="btn btn-primary-outline"
-                id="signup"
-                onClick={toggle_signup}
-              >
-                Signup
-              </button>
-            </li>
-            <li>
-              <button
-                style={{ color: "orange" }}
-                className="btn btn-primary-outline"
-                id="login"
-                onClick={toggle_login}
-              >
-                Login
-              </button>
-            </li> */}
+            
 
             {authButton()}
 
-            {/* <li>
-              <button
-                style={{ color: "orange" }}
-                className="btn btn-primary-outline"
-                id="logout"
-                onClick={clearToken}
-              >
-                Logout
-              </button>
-            </li> */}
             {logoutButton()}
           </ul>
         </ReactBootStrap.Navbar.Collapse>
@@ -147,12 +120,6 @@ const Header = (props) => {
       <Carousel />
       <div className="header-route">
         <Switch>
-          {/* <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route> */}
           <Route exact path="/home">
         <Podcasts />
         </Route>

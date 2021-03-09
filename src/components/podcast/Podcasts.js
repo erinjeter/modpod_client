@@ -67,14 +67,14 @@ const Podcasts = () => {
   return (
     <div id="main">
       <form id="search" onSubmit={(e) => handleSubmit(e)}>
-       <div>
-        <span>Enter search term: (required) </span>
-        <input 
-          type="text"
-          name="search"
-          onChange={(e) => setSearch(e.target.value)}
-          required
-        />
+        <div>
+          <span>Enter search term: (required) </span>
+          <input
+            type="text"
+            name="search"
+            onChange={(e) => setSearch(e.target.value)}
+            required
+          />
         </div>
         {/* <br /> */}
         <div id="genre">
@@ -84,35 +84,35 @@ const Podcasts = () => {
             type="select"
             name="select"
             onChange={(e) => setGenre_Ids(e.target.value)}
-          >        
-          <option>Any</option>
-          <option value="100">Arts</option>
-          <option value="93">Business</option>
-          <option value="133">Comedy</option>
-          <option value="111">Education</option>
-          <option value="168">Fiction</option>
-          <option value="117">Government</option>
-          <option value="88">Health & Fitness</option>
-          <option value="125">History</option>
-          <option value="132">Kids & Family</option>
-          <option value="82">Leisure</option>
-          <option value="151">Locally Focused</option>
-          <option value="134">Music</option>
-          <option value="99">News</option>
-          <option value="144">Personal Finance</option>
-          <option value="69">Religion & Spirituality</option>  
-          <option value="107">Science</option>
-          <option value="122">Society & Culture</option>
-          <option value="77">Sports</option>
-          <option value="127">Technology</option>
-          <option value="135">True Crime</option>    
-          <option value="68">TV & Film</option>
-        </Input>
+          >
+            <option>Any</option>
+            <option value="100">Arts</option>
+            <option value="93">Business</option>
+            <option value="133">Comedy</option>
+            <option value="111">Education</option>
+            <option value="168">Fiction</option>
+            <option value="117">Government</option>
+            <option value="88">Health & Fitness</option>
+            <option value="125">History</option>
+            <option value="132">Kids & Family</option>
+            <option value="82">Leisure</option>
+            <option value="151">Locally Focused</option>
+            <option value="134">Music</option>
+            <option value="99">News</option>
+            <option value="144">Personal Finance</option>
+            <option value="69">Religion & Spirituality</option>
+            <option value="107">Science</option>
+            <option value="122">Society & Culture</option>
+            <option value="77">Sports</option>
+            <option value="127">Technology</option>
+            <option value="135">True Crime</option>
+            <option value="68">TV & Film</option>
+          </Input>
         </div>
         {/* <br /> */}
-        <Button type="submit" style={{ backgroundColor: "darkgray"}}>Submit</Button>
+        <Button type="submit" outline color="secondary">Submit</Button>
       </form>
-      <CardColumns className="col d-flex align-content-start flex-wrap">
+      <CardColumns className="col d-flex align-content-start flex-wrap" style={{ marginTop: "2rem" }}>
         {podcasts.map((podcast) => (
           <SearchResult podcast={podcast} changeOffsetNum={changeOffset} />
         ))}
@@ -122,3 +122,4 @@ const Podcasts = () => {
 };
 
 export default Podcasts;
+
