@@ -91,7 +91,7 @@ const Header = (props) => {
         bg="dark"
         variant="dark"
       >
-        <ReactBootStrap.Navbar.Brand href="/home">
+        <ReactBootStrap.Navbar.Brand href="/">
           MODPOD
         </ReactBootStrap.Navbar.Brand>
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
