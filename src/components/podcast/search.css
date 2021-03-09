@@ -28,6 +28,7 @@
 
 #genreSelect {
     width: 200px;
+    margin-left: 10px;
 }
 
 #toggleCard {
@@ -40,4 +41,17 @@
     height: 300px;
     overflow: auto;
 }
+
+#search {
+    background-color: orange;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 15px;
+}
   
+#genre {
+    display: flex;
+    align-items: center;
+
+}

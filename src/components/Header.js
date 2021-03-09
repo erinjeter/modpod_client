@@ -6,9 +6,10 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 import Home from "./Home";
 import Carousel from "./Carousel";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 import Signup from "./Signup";
 import Login from "./Login";
+import FavoritesFetch from "./podcast/FavoritesFetch";
 
 const Header = (props) => {
   const [sessionToken, setSessionToken] = useState("");
@@ -47,9 +48,11 @@ const Header = (props) => {
         <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
           <ReactBootStrap.Nav className="mr-auto">
+            <Link to="/favorites">
             <ReactBootStrap.Nav.Link href="/favorites">
               Favorites
             </ReactBootStrap.Nav.Link>
+            </Link>
           </ReactBootStrap.Nav>
 
           <ReactBootStrap.Form inline></ReactBootStrap.Form>
@@ -57,6 +60,7 @@ const Header = (props) => {
           <ul className="nav navbar-nav navbar-right">
             <li>
               <button
+              style={{color: "orange"}}
                 className="btn btn-primary-outline"
                 id="signup"
                 onClick={toggle_signup}
@@ -66,6 +70,7 @@ const Header = (props) => {
             </li>
             <li>
               <button
+              style={{color: "orange"}}
                 className="btn btn-primary-outline"
                 id="login"
                 onClick={toggle_login}
@@ -75,6 +80,7 @@ const Header = (props) => {
             </li>
             <li>
               <button
+              style={{color: "orange"}}
                 className="btn btn-primary-outline"
                 id="logout"
                 onClick={clearToken}
@@ -93,6 +99,9 @@ const Header = (props) => {
           </Route>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/favorites">
+            <FavoritesFetch/>
           </Route>
         </Switch>
       </div>

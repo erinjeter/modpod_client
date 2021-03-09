@@ -7,7 +7,8 @@ import Podcasts from "./components/podcast/Podcasts";
 import Footer from "./components/Footer"; //tara
 import FavoritesFetch from "./components/podcast/FavoritesFetch";
 import FavoritesDisplay from "./components/podcast/FavoritesDisplay";
-import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
+// import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
+import RandomPod from "./components/podcast/RandomPod";
 
 import {
   //tara
@@ -41,8 +42,9 @@ function App() {
         <Header />
         </Router>
         <Podcasts />
-        <FavoritesFetch />
-        <FavoritesDisplay />
+        {/* <RandomPod /> */}
+        {/* <FavoritesFetch />  //Lesley*/} 
+        {/* <FavoritesDisplay />  //Lesley*/}
         <Footer />
       </div>
     </div>
