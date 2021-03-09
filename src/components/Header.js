@@ -34,6 +34,55 @@ const Header = (props) => {
   const toggle_signup = () => setSignup(!signup);
   const toggle_login = () => setLogin(!login);
   const toggle_logout = () => setLogout(!logout);
+
+  function authButton() {
+    return localStorage.getItem("token") != null ? (
+      ""
+    ) : (
+      <>
+        <li>
+          <button
+            style={{ color: "orange" }}
+            className="btn btn-primary-outline"
+            id="signup"
+            onClick={toggle_signup}
+          >
+            Signup
+          </button>
+        </li>
+        <li>
+          <button
+            style={{ color: "orange" }}
+            className="btn btn-primary-outline"
+            id="login"
+            onClick={toggle_login}
+          >
+            Login
+          </button>
+        </li>
+      </>
+    );
+  }
+
+  function logoutButton() {
+    return localStorage.getItem("token") === null ? (
+      ""
+    ) : (
+      <>
+        <li>
+          <button
+            style={{ color: "orange" }}
+            className="btn btn-primary-outline"
+            id="logout"
+            onClick={clearToken}
+          >
+            Logout
+          </button>
+        </li>
+      </>
+    );
+  }
+
   return (
     <header>
       <ReactBootStrap.Navbar
@@ -49,18 +98,18 @@ const Header = (props) => {
         <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
           <ReactBootStrap.Nav className="mr-auto">
             <Link to="/favorites">
-            <ReactBootStrap.Nav.Link href="/favorites">
-              Favorites
-            </ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link href="/favorites">
+                Favorites
+              </ReactBootStrap.Nav.Link>
             </Link>
           </ReactBootStrap.Nav>
 
           <ReactBootStrap.Form inline></ReactBootStrap.Form>
 
           <ul className="nav navbar-nav navbar-right">
-            <li>
+            {/* <li>
               <button
-              style={{color: "orange"}}
+                style={{ color: "orange" }}
                 className="btn btn-primary-outline"
                 id="signup"
                 onClick={toggle_signup}
@@ -70,24 +119,28 @@ const Header = (props) => {
             </li>
             <li>
               <button
-              style={{color: "orange"}}
+                style={{ color: "orange" }}
                 className="btn btn-primary-outline"
                 id="login"
                 onClick={toggle_login}
               >
                 Login
               </button>
-            </li>
-            <li>
+            </li> */}
+
+            {authButton()}
+
+            {/* <li>
               <button
-              style={{color: "orange"}}
+                style={{ color: "orange" }}
                 className="btn btn-primary-outline"
                 id="logout"
                 onClick={clearToken}
               >
                 Logout
               </button>
-            </li>
+            </li> */}
+            {logoutButton()}
           </ul>
         </ReactBootStrap.Navbar.Collapse>
       </ReactBootStrap.Navbar>
@@ -101,7 +154,7 @@ const Header = (props) => {
             <Home />
           </Route>
           <Route exact path="/favorites">
-            <FavoritesFetch/>
+            <FavoritesFetch />
           </Route>
         </Switch>
       </div>
@@ -135,7 +188,7 @@ const Header = (props) => {
           <h2>
             Login and Get <span>Started</span>
           </h2>
-          <span className="subtitle">Complete the form below!</span>
+          {/* <span className="subtitle">Complete the form below!</span> */}
 
           <div className="form-group">
             <Login
@@ -150,7 +203,6 @@ const Header = (props) => {
               aria-required="true"
             />
           </div>
-
         </div>
       </Modal>
     </header>
