@@ -1,3 +1,4 @@
+
 let APIURL = "";
 
 switch (window.location.hostname) {
@@ -10,3 +11,4 @@ switch (window.location.hostname) {
 }
 
 export default APIURL;
+

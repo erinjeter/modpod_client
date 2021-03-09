@@ -2,7 +2,7 @@
     /* width: 60% !important; */
     
     margin: 10px !important;
-       border-radius: 3%;
+       /* border-radius: 3%; */
        height: 30%;
        
 }
@@ -28,6 +28,7 @@
 
 #genreSelect {
     width: 200px;
+    margin-left: 10px;
 }
 
 #toggleCard {
@@ -40,4 +41,21 @@
     height: 300px;
     overflow: auto;
 }
+
+#search {
+    background-color: rgb(192, 192, 192);
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding: 15px;
+}
   
+#genre {
+    display: flex;
+    align-items: center;
+
+}
+
+Button {
+    background-color: blue;
+}

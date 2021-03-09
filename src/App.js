@@ -7,7 +7,9 @@ import Podcasts from "./components/podcast/Podcasts";
 import Footer from "./components/Footer"; //tara
 import FavoritesFetch from "./components/podcast/FavoritesFetch";
 import FavoritesDisplay from "./components/podcast/FavoritesDisplay";
-import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
+// import ReviewIndex from "./components/podcast/reviews/ReviewIndex";
+import { Route } from "react-router-dom";
+
 
 import {
   //tara
@@ -38,11 +40,8 @@ function App() {
     <div className="page-container">
       <div className="content-wrap">
         <Router>
-          <Header />
+          <Header token={sessionToken} />
         </Router>
-        <Podcasts />
-        <FavoritesFetch />
-        <FavoritesDisplay />
         <Footer />
       </div>
     </div>

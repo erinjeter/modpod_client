@@ -8,19 +8,24 @@ import {
   CardDeck,
   CardSubtitle,
   CardBody,
+  CardColumns,
 } from "reactstrap";
 import FavoritesDisplay from "./FavoritesDisplay";
 import APIURL from "../../helpers/environment";
 import ReviewEdit from "./reviews/ReviewEdit";
-import ReviewIndex from "./reviews/ReviewIndex";
+// import ReviewIndex from "./reviews/ReviewIndex";
+import APIURL from "../../helpers/environment";
+
 const baseURL = "https://listen-api.listennotes.com/api/v2";
 const FavoritesFetch = () => {
   //FETCH FROM FAVORITES TABLE
   const [allFaves, setAllFaves] = useState([]);
+  const [updateActive, setUpdateActive] = useState(false);
+  const [reviewToUpdate, setReviewToUpdate] = useState({});
 
   const fetchFaves = () => {
     fetch(`${APIURL}/favorites/mine`, {
-      method: "PUT",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: localStorage.getItem("token"),
@@ -32,14 +37,26 @@ const FavoritesFetch = () => {
       })
       .catch((err) => console.log(err));
   };
+
   useEffect(() => {
     fetchFaves();
   }, []);
   return (
     <div>
-      {allFaves.map((podcast) => (
-        <FavoritesDisplay podcast={podcast.podcastid} />
-      ))}
+      <CardColumns
+        className="col d-flex align-content-start flex-wrap"
+        style={{ marginTop: "2rem" }}
+      >
+        {allFaves.map((podcast) => (
+          <FavoritesDisplay
+            podcast={podcast.podcastid}
+            id={podcast.id}
+            cast={podcast}
+          />
+        ))}
+
+        {console.log(allFaves)}
+      </CardColumns>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import APIURL from "../helpers/environment";
 
@@ -20,12 +20,13 @@ const Login = (props) => {
       .then((response) => response.json())
       .then((data) => {
         props.updateToken(data.sessionToken);
+        props.setLogin(false);
       });
   };
 
   return (
     <div>
-      <h1>Login</h1>
+      {/* <h1>Login</h1> */}
       <Form onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="email">Email</Label>

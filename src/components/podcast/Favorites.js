@@ -26,11 +26,18 @@ const SendFave = ({ podcastid }) => {
         console.log(json);
         setFaves(json.results);
       });
+    alert("Favorited");
   };
 
+  function faveAlert() {
+    alert("Favorited");
+  }
   return (
     <div>
-      <Button onClick={() => getFave()}>Save Favorite</Button>
+      <Button onClick={() => getFave()} style={{ marginTop: "1rem" }}>
+        Save Favorite
+      </Button>
+      {/* <Button onClick="getFave();faveAlert()">Save Favorite</Button> */}
     </div>
   );
 };
